@@ -1,0 +1,17 @@
+# 960/2 = 480 480/2=240
+# (0,0) = (240,480)
+
+from random import random
+import math
+
+# n: num points
+# c: center
+# r: radius
+def rand_cluster(n,c,r):
+    x,y = c
+    points = []
+    for i in range(n):
+        theta = 2*math.pi*random()
+        s = r*random.uniform(.75, 1.25)
+        points.append((x+s*math.cos(theta), y+s*math.sin(theta)))
+    return points

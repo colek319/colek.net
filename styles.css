@@ -1,0 +1,50 @@
+html {
+    display: block;
+}
+
+.roof {
+    font-size: small;
+    font-family: sans-serif;
+    width: 100%;
+    margin: 0;
+    padding-top: 3px;
+    font-style: italic;
+    border-bottom: solid #eee 1px;
+    color: #999;
+}
+
+.roof a {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+head {
+    display: none;
+}
+
+body {
+    margin: 0 auto;
+    font-family: 'PT Serif', Georgia, Times, 'Times New Roman', serif;
+    line-height: 1.5em;
+    color: #333;
+    background: #fefefe;
+    width: 960px;
+    position: relative;
+}
+
+div {
+    display: block;
+}
+
+p {
+  width: 720px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h1, h2, h3 {
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
