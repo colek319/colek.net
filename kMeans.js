@@ -22,6 +22,7 @@ var canvas = d3.select("#graph").append("canvas")
     .on("click", function() {
       var mouse = d3.mouse(this);
       add_point(mouse[0] * ratio, mouse[1] * ratio);
+      update();
     });
 
 var context = canvas.node().getContext("2d");
@@ -29,7 +30,7 @@ context.fillStyle = "#000";
 context.lineWidth = .5 * ratio;
 context.strokeStyle = "#000";
 
-d3.timer(update);
+//d3.timer(update);
 
 function update() 
 {
@@ -41,7 +42,7 @@ function update()
   if (n != 0) {
     vertices = merge_sort(vertices);
     console.log(vertices);
-    make_voronoi(vertices);
+    //make_voronoi(vertices);
     hull = convex_hull(vertices);
     console.log(hull);
     draw_voronoi();

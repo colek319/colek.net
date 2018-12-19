@@ -388,6 +388,7 @@ merge_hull = function(left_hull, right_hull)
 	console.log(length);
 /* Form upper and lower pointsets for jarvis march. */
 	upper_set.push(left_end);
+	lower_set.push(left_end);
 	for (var i = 1; i < length - 1; i++) {
 		if (is_left_turn(left_end, right_end, temp_set[i])) {
 			upper_set.push(temp_set[i]);
@@ -396,7 +397,10 @@ merge_hull = function(left_hull, right_hull)
 			lower_set.push(temp_set[i]);
 		}
 	}
+	upper_set.push(right_end);
 	lower_set.push(right_end);
+
+	console.log("LOWER AND UPPER SET");
 	console.log(lower_set);
 	console.log(upper_set);
 
@@ -414,6 +418,7 @@ merge_hull = function(left_hull, right_hull)
 			upper_hull.push(upper_set[i]);
 		}
 	}
+	upper_hull.pop(); /* removes right endpoint */
 
 /* Jarvis March on lower hull */
 	for (var i = lower_set.length - 1; i >= 0; i--) {
@@ -429,12 +434,16 @@ merge_hull = function(left_hull, right_hull)
 			lower_hull.push(lower_set[i]);
 		}
 	}
+	lower_hull.pop(); /* removes left endpoint */
 
+	
+	console.log("UPPER AND LOWER HULLS");
 	console.log(upper_hull);
 	console.log(lower_hull);
 
 	hull = upper_hull.concat(lower_hull);
 
+	console.log("FINAL HULL");
 	console.log(hull);
 
 	return hull;
