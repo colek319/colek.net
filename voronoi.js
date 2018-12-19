@@ -48,18 +48,13 @@ Voronoi.prototype.base_case = function(sites)
 	return new_DCEL;
 };
 
-Voronoi.prototype.convex_hull = function(point_set) {
-	if (point_set.length == 1) {
-		return point_set;
-	}
-	else if (point_set.length == 2) {
-
-	}
-};
-
 Voronoi.prototype.reset = function() 
 {
 	this.edge_list.recycle();
+};
+
+Voronoi.prototype.get_slope = function(v_1, v_2) {
+
 };
 
 // Computes the perpendicular bisector of the line segment v_1v_2
@@ -70,6 +65,8 @@ Voronoi.prototype.perp_bisect = function(v_1, v_2)
 	var m = (v_2[1]-v_1[1])/(v_2[0]-v_1[0]);
 	var m_bi = -1/m;
 };
+
+
 
 ////////////////DCEL////////////////
 // The client is who will handle the nuances of this.
@@ -314,14 +311,13 @@ Face.prototype.clear = function()
 
 merge_sort = function(array) 
 {
-	//console.log(array);
-	var length = Math.floor(array.length);
+	console.log(array.length)
+	var length = array.length;
 	if (length == 1) {
 		return array;
 	}
-
-	var l_array = merge_sort(array.slice(0,length/2));
-	var r_array = merge_sort(array.slice(length/2, length));
+	var l_array = merge_sort(array.slice(0, Math.floor(length/2)));
+	var r_array = merge_sort(array.slice(Math.floor(length/2), length));
 	return merge(l_array, r_array);	
 }
 
@@ -342,10 +338,171 @@ merge = function(l_array, r_array)
 		}
 	}
 	if (i != l_array.length) {
-		result = result.concat(l_array.slice(i, l_array.length));
+		result = result.concat(l_array.slice(i));
 	}
 	if (j != r_array.length) {
-		result = result.concat(r_array.slice(j, r_array.length));
+		result = result.concat(r_array.slice(j));
 	}
 	return result;
+}
+
+/* Make sure point_set sorted first */
+convex_hull = function(point_set) 
+{
+	var length = point_set.length,
+		left_set = undefined,
+		right_set = undefined,
+		left_hull = undefined,
+		right_hull = undefined,
+		hull = undefined;
+
+	if (length <= 3) {
+		return point_set
+	}
+	var left_set = point_set.slice(0, Math.floor(length / 2));
+	var right_set = point_set.slice(Math.floor(length / 2), length);
+	var left_hull = convex_hull(left_set);
+	var right_hull = convex_hull(right_set);
+	var hull = merge_hull(left_hull, right_hull);
+	return hull;
+}
+
+merge_hull = function(left_hull, right_hull) 
+{
+	console.log(left_hull);
+	console.log(right_hull);
+	var left_end,
+		right_end,
+		temp_set = merge(left_hull, right_hull),
+		length = temp_set.length,
+		upper_set = [],
+		lower_set = [],
+		upper_hull = [],
+		lower_hull = [];
+
+	console.log(temp_set);
+
+	left_end = temp_set[0];
+	right_end = temp_set[length - 1];
+
+	console.log(length);
+/* Form upper and lower pointsets for jarvis march. */
+	upper_set.push(left_end);
+	for (var i = 1; i < length - 1; i++) {
+		if (is_left_turn(left_end, right_end, temp_set[i])) {
+			upper_set.push(temp_set[i]);
+		}
+		else {
+			lower_set.push(temp_set[i]);
+		}
+	}
+	lower_set.push(right_end);
+	console.log(lower_set);
+	console.log(upper_set);
+
+/* jarvis march on upper hull */
+	for (var i = 0; i < upper_set.length; i++) {
+		if (upper_hull.length < 2) {
+			upper_hull.push(upper_set[i]);
+		}
+		else if (is_left_turn(upper_hull[upper_hull.length - 2], 
+					upper_hull[upper_hull.length - 1], upper_set[i])) {
+			upper_hull.pop();
+			upper_hull.push(upper_set[i]);
+		}
+		else {
+			upper_hull.push(upper_set[i]);
+		}
+	}
+
+/* Jarvis March on lower hull */
+	for (var i = lower_set.length - 1; i >= 0; i--) {
+		if (lower_hull.length < 2) {
+			lower_hull.push(lower_set[i]);
+		}
+		else if (is_left_turn(lower_hull[lower_hull.length - 2], 
+					lower_hull[lower_hull.length - 1], lower_set[i])) {
+			lower_hull.pop();		
+			lower_hull.push(lower_set[i]);
+		}
+		else {
+			lower_hull.push(lower_set[i]);
+		}
+	}
+
+	console.log(upper_hull);
+	console.log(lower_hull);
+
+	hull = upper_hull.concat(lower_hull);
+
+	console.log(hull);
+
+	return hull;
+}
+
+left_extreme = function(point_set) 
+{
+	var i = -1,
+		length = point_set.length,
+		found = 0,
+		left,
+		right;
+
+	while (!found) {
+		found = 1;
+		/* Gets index clockwise to i */
+		left = ((i - 1) + length) % length;
+		/*  Gets index counter clockwise to i */
+		right = ((i + 1) + length) % length;
+
+		if (point_set[i][0] > point_set[left][0]
+			|| point_set[i][0] > point_set[right][0]) {
+			i = i + 1;
+			found = 0;
+		}
+	}
+	return i;
+}
+
+right_extreme = function(point_set) 
+{
+	var i = 0,
+		length = point_set.length,
+		found = 0,
+		left,
+		right;
+
+	while (!found) {
+		found = 1;
+		/* Gets index clockwise to i */
+		left = ((i - 1) + length) % length;
+		/*  Gets index counter clockwise to i */
+		right = ((i + 1) + length) % length;
+
+		if (point_set[i][0] < point_set[left][0]
+			|| point_set[i][0] < point_set[right][0]) {
+			i = i + 1;
+			found = 0;
+		}
+	}
+	return i;
+}
+
+/* returns true if area is positive, false if
+ 	are is negative. This can also check if 
+ 	points are collinear. This is when area is
+ 	0 										  	*/
+is_left_turn = function(p_1, p_2, p_3) {
+	var A = p_1[0] * (p_2[1] - p_3[1]);
+	var B = p_2[0] * (p_1[1] - p_3[1]);
+	var C = p_3[0] * (p_1[1] - p_2[1]);
+
+	var area = .5 * (A - B + C);
+
+	if (area > 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
