@@ -40,8 +40,9 @@ function update()
     context.fillRect(vertices[i][0], vertices[i][1], 5, 5)
   }
   if (n != 0) {
+    // fix this later. 
     vertices = merge_sort(vertices);
-    console.log(vertices);
+    //console.log(vertices);
     //make_voronoi(vertices);
     hull = convex_hull(vertices);
     console.log(hull);
@@ -51,7 +52,7 @@ function update()
 
 function make_voronoi(vertices) 
 {
-  voronoi.reset();
+  //voronoi.reset();
   voronoi.compute_voronoi(vertices);
 }
 
