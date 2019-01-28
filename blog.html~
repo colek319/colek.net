@@ -1,0 +1,20 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/Users/cole_koester/Desktop/learn/coding/Voronoi-Diagram/styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<title> Comp163 Final Project  </title>
+</head>
+
+<body>
+
+<div class="roof">
+<a href="/Users/cole_koester/Desktop/learn/coding/Voronoi-Diagram/home.html"> Home </a>
+<a> K-Means </a>
+<h1> Projects </h1>
+</div>
+
+</body>
+</html>

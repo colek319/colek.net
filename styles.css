@@ -1,21 +1,41 @@
 html {
     display: block;
 }
-
-.roof {
+ 
+div.roof {
     font-size: small;
     font-family: sans-serif;
-    width: 100%;
-    margin: 0;
+    width: 90%;
+    height: 100px;
+    margin-left: 5%;
+    margin-right: auto;
     padding-top: 3px;
-    font-style: italic;
-    border-bottom: solid #eee 1px;
+    border-bottom: solid #cc33ff 1px;
     color: #999;
+}
+
+div.floor {
+    font-size: small;
+    font-family: sans-serif;
+    width: 90%;
+    height: 100px;
+    margin-left: 5%;
+    margin-right: auto;
+    padding-top: 3px;
+    border-top: solid #cc33ff 1px;
+    color: #999;
+    position: fixed;
+    bottom: 0px;
 }
 
 .roof a {
     padding-left: 10px;
     padding-right: 10px;
+    /*color: #ac00e6;*/
+}
+
+.roof h1 {
+    color: #999;
 }
 
 head {
@@ -28,8 +48,6 @@ body {
     line-height: 1.5em;
     color: #333;
     background: #fefefe;
-    width: 960px;
-    position: relative;
 }
 
 div {
@@ -47,4 +65,49 @@ h1 {
 h1, h2, h3 {
     font-weight: 300;
     text-rendering: optimizeLegibility;
+}
+
+#graph {
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    border: 1px solid black;
+    width: 960px;
+}
+
+.bio-box {
+    position: absolute;
+    margin: 64px 128px 128px 128px;
+    width: 720px;
+}
+
+.bio-box p { 
+    margin: 8px 0px 8px 0px;
+}
+
+.discussion {
+    margin: auto;
+    width: 600px;
+    padding-top: 16px;
+    
+}
+
+.bio-box h1 {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.bio-photo {
+    height: 100%;
+    max-height: 360px;
+    width: auto;
+    position: absolute;
+    right: 0px;
+    margin: 64px 128px 64px 64px;
 }
