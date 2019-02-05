@@ -5,49 +5,60 @@ html {
 div.roof {
     font-size: small;
     font-family: sans-serif;
-    width: 90%;
-    height: 100px;
-    margin-left: 5%;
-    margin-right: auto;
+    height: 8%; 
     padding-top: 3px;
     border-bottom: solid #cc33ff 1px;
     color: #999;
+    margin-bottom: 32px;
 }
 
-div.floor {
-    font-size: small;
-    font-family: sans-serif;
-    width: 90%;
-    height: 100px;
-    margin-left: 5%;
-    margin-right: auto;
-    padding-top: 3px;
-    border-top: solid #cc33ff 1px;
-    color: #999;
-    position: fixed;
-    bottom: 0px;
+.roof ul {
+    display: inline-block;
+    float: right;
+    vertical-align: middle;
 }
 
-.roof a {
+.roof ul a {
     padding-left: 10px;
     padding-right: 10px;
-    /*color: #ac00e6;*/
+    display: inline-block;
+    padding-bottom: 0px;
+    padding-top: 0;
+    font-size: 15px;
 }
 
 .roof h1 {
     color: #999;
-}
-
-head {
-    display: none;
+    font-size: 2.25vw;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 body {
-    margin: 0 auto;
     font-family: 'PT Serif', Georgia, Times, 'Times New Roman', serif;
     line-height: 1.5em;
+    font-size: 12pt;
     color: #333;
     background: #fefefe;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    margin-top: 0;
+    height: auto;
+}
+
+.section-header {
+    margin-left: 0%;
+    font-weight: bold;
+    padding: 10px 0 5px 0;
+}
+
+.page-contents {
+    margin: 20px auto 0px auto;
+    max-width: 650px;
+    line-height: 1.2;
+    font-size: 16px;
+    padding: 10px;
 }
 
 div {
@@ -55,7 +66,7 @@ div {
 }
 
 p {
-  width: 720px;
+  padding: 0;
 }
 
 h1 {
@@ -75,39 +86,43 @@ h1, h2, h3 {
     padding-right: 0;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 32px;
+    margin-top: 5%;
     margin-bottom: 32px;
     border: 1px solid black;
     width: 960px;
 }
 
-.bio-box {
-    position: absolute;
-    margin: 64px 128px 128px 128px;
-    width: 720px;
+.container {
+    margin: auto;
+    max-width: 650px;
 }
 
-.bio-box p { 
-    margin: 8px 0px 8px 0px;
+.container p { 
+
 }
 
 .discussion {
     margin: auto;
-    width: 600px;
+    width: 60%;
     padding-top: 16px;
-    
+
 }
 
-.bio-box h1 {
+.container h1 {
     font-size: 1.5em;
     margin-top: 10px;
+    margin-bottom: 8px;
+
 }
 
-.bio-photo {
-    height: 100%;
-    max-height: 360px;
-    width: auto;
-    position: absolute;
-    right: 0px;
-    margin: 64px 128px 64px 64px;
+.container h2 {
+    font-size: 1.0em;
+    margin-top: 10px;
+    margin-left: 2.5%;
+    margin-bottom: 3px;
 }
+
+.container ul {
+    margin: 0 5% 0 5%;
+}
+
