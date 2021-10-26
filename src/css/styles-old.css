@@ -1,0 +1,128 @@
+html {
+    display: block;
+}
+ 
+div.roof {
+    font-size: small;
+    font-family: sans-serif;
+    height: 8%; 
+    padding-top: 3px;
+    border-bottom: solid #cc33ff 1px;
+    color: #999;
+    margin-bottom: 32px;
+}
+
+.roof ul {
+    display: inline-block;
+    float: right;
+    vertical-align: middle;
+}
+
+.roof ul a {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-block;
+    padding-bottom: 0px;
+    padding-top: 0;
+    font-size: 15px;
+}
+
+.roof h1 {
+    color: #999;
+    font-size: 2.25vw;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+body {
+    font-family: 'PT Serif', Georgia, Times, 'Times New Roman', serif;
+    line-height: 1.5em;
+    font-size: 12pt;
+    color: #333;
+    background: #fefefe;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    margin-top: 0;
+    height: auto;
+}
+
+.section-header {
+    margin-left: 0%;
+    font-weight: bold;
+    padding: 10px 0 5px 0;
+}
+
+.page-contents {
+    margin: 20px auto 0px auto;
+    max-width: 650px;
+    line-height: 1.2;
+    font-size: 16px;
+    padding: 10px;
+}
+
+div {
+    display: block;
+}
+
+p {
+  padding: 0;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h1, h2, h3 {
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+
+#graph {
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 32px;
+    border: 1px solid black;
+    width: 960px;
+}
+
+.container {
+    margin: auto;
+    max-width: 650px;
+}
+
+.container p { 
+
+}
+
+.discussion {
+    margin: auto;
+    width: 60%;
+    padding-top: 16px;
+
+}
+
+.container h1 {
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-bottom: 8px;
+
+}
+
+.container h2 {
+    font-size: 1.0em;
+    margin-top: 10px;
+    margin-left: 2.5%;
+    margin-bottom: 3px;
+}
+
+.container ul {
+    margin: 0 5% 0 5%;
+}
+

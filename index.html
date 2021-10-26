@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html>
+    <head>
+	    <!--Import Google Icon Font-->
+	    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	    <!--Import materialize.css-->
+	    <link type="text/css" rel="stylesheet" href="./public/static/lib/materialize/css/materialize.min.css"  media="screen,projection"/>
+	    <link type="text/css" rel="stylesheet" href="./src/css/styles.css" media="screen,projection"/>        
 
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="src/css/styles.css" />
-<title> Cole Koester </title>
-</head>
+	    <!--Let browser know website is optimized for mobile-->
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
 
-<body>
+    <body>
+	    <nav class="transparent z-depth-0 p-nav">
+	    	<div class="nav-wrapper">
+	    	  <a href="#" class="p-logo brand-logo">Cole Koester</a>
+	    	  <ul id="nav-mobile" class="right hide-on-med-and-down">
+	    		<li><a href="sass.html" style="color:black">blog</a></li>
+	    		<li><a href="badges.html" style="color:black">resume</a></li>
+	    		<li><a href="collapsible.html" style="color:black">projects</a></li>
+	    	  </ul>
+	    	</div>
+	    </nav>	
 
-<div class="roof">
-<h1> Home </h1>
-<ul>
-<a> Home </a>
-<a href="src/html/projects.html"> Projects </a>
-<a href="src/html/resume.html"> Resume </a>
-<a href="src/html/notes.html"> Notes </a>
-</ul>
-</div>
-
-<div class="page-contents"> 
-
-<div class="container">
-<h1 class="section-header"> I'm Cole Koester. </h1>
-<p> </p>
-<p> Please <a href="mailto:cole.koester@tufts.edu"> email me </a> if you wish! Here is my <a href="https://github.com/colek319"> github. </a> For a physical copy of my resume, click <a href="Resume_2019.pdf"> here. </a></p>
-<p> To read more about my hopes, dreams, and life, click <a href="/Users/cole_koester/Desktop/learn/coding/Voronoi-Diagram/about-me.html"> here </a> </p>
-
-<h1 class="section-header">
-	Much of this site is in construction!
-</h1>
-</div>
-</div>
-</body>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.11/svg.min.js"> </script>
-<script src="src/js/menu-button.js"> </script>
+        <div class="about-me">
+            <div style="width: 60%; float:left; padding:40px">
+                <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    
+                    Why do we use it?
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                </p>                
+            </div>
+            
+            <div style="width:40%; float:right; padding:40px">
+                <img src="public/static/images/cat.jpeg" alt="its a cat" width=300px></img>                
+            </div>
+        </div>
+	    <!--Import jQuery before materialize.js-->
+	    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	    <script type="text/javascript" src="./public/static/lib/materialize/js/materialize.min.js"></script>
+    </body>
 </html>
