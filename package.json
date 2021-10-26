@@ -1,0 +1,8 @@
+{
+  "name": "colek.net",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:colek319/colek.net.git",
+  "author": "Colebasaur <colebasaures@gmail.com>",
+  "license": "MIT"
+}
