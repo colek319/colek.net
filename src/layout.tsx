@@ -6,7 +6,7 @@ const Layout = (props: React.PropsWithChildren) => {
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>
       <AppShell
-        padding="md"
+        padding="xl"
         header={HeaderWithLinks({
           links: [
             { link: '/', label: 'Home' },
