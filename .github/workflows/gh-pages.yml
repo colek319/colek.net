@@ -17,7 +17,9 @@ jobs:
           version: 7
           run_install: true
       - name: Build
-        run: pnpm build
+        run: | 
+          pnpm build
+          touch .nojekyll
       - name: Force push to destination branch
         uses: ad-m/github-push-action@master
         with:
