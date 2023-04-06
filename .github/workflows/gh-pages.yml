@@ -17,7 +17,7 @@ jobs:
           version: 7
           run_install: true
       - name: Build and navigate to dist
-        run: | 
+        run: |
           pnpm build
           touch .nojekyll
           mv CNAME dist/

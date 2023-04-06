@@ -11,7 +11,7 @@ const Home = () => {
         <Grid justify="center">
           <Grid.Col span={4}>
             <UserInfoIcons
-              avatar={ meIcon }
+              avatar={meIcon}
               name="Cole Koester"
               title="Software Engineer"
               phone="(443) 736-6751"

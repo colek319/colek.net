@@ -91,7 +91,7 @@ const HeaderWithLinks = ({ links }: HeaderWithLinksProps) => {
   return (
     <Header height={60} mb={120}>
       <Container className={classes.header}>
-        <img src={CatUrl} style={{ height: 53, width: 36 }} ></img>
+        <img src={CatUrl} style={{ height: 53, width: 36 }}></img>
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
