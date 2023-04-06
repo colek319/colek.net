@@ -2,6 +2,7 @@ import { Container, Grid, Text } from '@mantine/core';
 import React from 'react';
 import Layout from './layout';
 import { UserInfoIcons } from './coleInfo';
+import meIcon from './assets/koester.cole.jpg';
 
 const Home = () => {
   return (
@@ -10,7 +11,7 @@ const Home = () => {
         <Grid justify="center">
           <Grid.Col span={4}>
             <UserInfoIcons
-              avatar="./src/assets/koester.cole.jpg"
+              avatar={ meIcon }
               name="Cole Koester"
               title="Software Engineer"
               phone="(443) 736-6751"

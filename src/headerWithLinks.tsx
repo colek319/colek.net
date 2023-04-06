@@ -7,7 +7,7 @@ import {
   rem,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { ReactComponent as Cat } from './assets/cat.svg';
+import CatUrl from './assets/cat.svg';
 import { useNavigate } from 'react-router-dom';
 
 const useStyles = createStyles(theme => ({
@@ -91,7 +91,7 @@ const HeaderWithLinks = ({ links }: HeaderWithLinksProps) => {
   return (
     <Header height={60} mb={120}>
       <Container className={classes.header}>
-        <Cat style={{ height: 53, width: 36 }} />
+        <img src={CatUrl} style={{ height: 53, width: 36 }} ></img>
         <Group spacing={5} className={classes.links}>
           {items}
         </Group>
