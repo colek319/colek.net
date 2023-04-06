@@ -2,7 +2,7 @@ import { Container, Grid, Text } from '@mantine/core';
 import React from 'react';
 import Layout from './layout';
 import { UserInfoIcons } from './coleInfo';
-import meIcon from './assets/koester.cole.jpg';
+import meIcon from './koester.cole.jpg';
 
 const Home = () => {
   return (
