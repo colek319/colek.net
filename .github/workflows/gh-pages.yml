@@ -10,14 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+    - uses: pnpm/action-setup@v2
+      name: Install pnpm
+      id: pnpm-install
       with:
-        # Version Spec of the version to use in SemVer notation.
-        # It also emits such aliases as lts, latest, nightly and canary builds
-        # Examples: 12.x, 10.15.1, >=10.15.0, lts/Hydrogen, 16-nightly, latest, node
-        node-version: '16'    
-    - name: Build and Switch Dir
+        version: 7
+        run_install: true
+    - name: Build and Navigate to Source Dir
       run: |
-        npm install
-        npm run build
-        cd ./dist
+        pnpm build
+        cd dist
