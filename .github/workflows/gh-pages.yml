@@ -19,5 +19,5 @@ jobs:
     - name: Build and Switch Dir
       run: |
         npm install
-        npm build
+        npm run build
         cd ./dist
