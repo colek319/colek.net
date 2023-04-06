@@ -4,19 +4,19 @@ on:
     # this is the branch where you develop your site
     # as discussed in the publishing sources section
     # this can change if you are using an user/organization repo
-    branches: [ master ]
+    branches: [master]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: pnpm/action-setup@v2
-      name: Install pnpm
-      id: pnpm-install
-      with:
-        version: 7
-        run_install: true
-    - name: Build and Navigate to Source Dir
-      run: |
-        pnpm build
-        cd dist
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: true
+      - name: Build and Navigate to Source Dir
+        run: |
+          pnpm build
+          cd ./dist

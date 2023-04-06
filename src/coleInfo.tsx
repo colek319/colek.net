@@ -1,9 +1,12 @@
 import { createStyles, Avatar, Text, Group } from '@mantine/core';
 import { IconPhoneCall, IconAt } from '@tabler/icons-react';
 
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles(theme => ({
   icon: {
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[5],
+    color:
+      theme.colorScheme === 'dark'
+        ? theme.colors.dark[3]
+        : theme.colors.gray[5],
   },
 
   name: {
@@ -19,7 +22,13 @@ interface UserInfoIconsProps {
   email: string;
 }
 
-export function UserInfoIcons({ avatar, name, title, phone, email }: UserInfoIconsProps) {
+export function UserInfoIcons({
+  avatar,
+  name,
+  title,
+  phone,
+  email,
+}: UserInfoIconsProps) {
   const { classes } = useStyles();
   return (
     <div>
