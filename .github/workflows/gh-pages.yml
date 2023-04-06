@@ -20,6 +20,7 @@ jobs:
         run: | 
           pnpm build
           touch .nojekyll
+          mv CNAME dist/
           cd dist
           git init
           git add -A
