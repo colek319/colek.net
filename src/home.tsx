@@ -1,17 +1,15 @@
-import { Button, Card, Container, Grid, Image, Text } from '@mantine/core';
+import { Container, Grid, Text } from '@mantine/core';
 import React from 'react';
 import Layout from './layout';
 import { UserInfoIcons } from './coleInfo';
 import meIcon from './assets/koester.cole.jpg';
-import resume from './assets/resume.pdf';
-import resumeImg from './assets/resume.png';
 
 const Home = () => {
   return (
     <Layout>
       <Container>
         <Grid justify="center">
-          <Grid.Col span={4}>
+          <Grid.Col sm={12} lg={4}>
             <UserInfoIcons
               avatar={meIcon}
               name="Cole Koester"
@@ -20,25 +18,25 @@ const Home = () => {
               email="me@colek.net"
             />
             <br />
-            <Grid.Col span={10}>
-              <Card shadow="sm" radius="md" withBorder>
-                <Card.Section component="a" href={resume}>
-                  <Image src={resumeImg} height={100} alt="Resume" />
-                </Card.Section>
-                <a href={resume} download="colekoester.pdf">
-                  <Button
-                    variant="light"
-                    color="blue"
-                    fullWidth
-                    mt="sm"
-                    radius="md">
-                    Download Resume
-                  </Button>
-                </a>
-              </Card>
-            </Grid.Col>
+            {/*<Grid.Col span={10}>*/}
+            {/*  <Card shadow="sm" radius="md" withBorder>*/}
+            {/*    <Card.Section component="a" href={resume}>*/}
+            {/*      <Image src={resumeImg} height={100} alt="Resume" />*/}
+            {/*    </Card.Section>*/}
+            {/*    <a href={resume} download="colekoester.pdf">*/}
+            {/*      <Button*/}
+            {/*        variant="light"*/}
+            {/*        color="blue"*/}
+            {/*        fullWidth*/}
+            {/*        mt="sm"*/}
+            {/*        radius="md">*/}
+            {/*        Download Resume*/}
+            {/*      </Button>*/}
+            {/*    </a>*/}
+            {/*  </Card>*/}
+            {/*</Grid.Col>*/}
           </Grid.Col>
-          <Grid.Col span={8}>
+          <Grid.Col sm={12} lg={8}>
             <Text size="md">
               Hello, I&apos;m Cole Koester. I am a software engineer with a
               passion for building cool things with cool people.
