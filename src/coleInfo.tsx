@@ -32,7 +32,7 @@ export function UserInfoIcons({
   const { classes } = useStyles();
   return (
     <div>
-      <Group noWrap>
+      <Group>
         <Avatar src={avatar} size={94} radius="md" />
         <div>
           <Text fz="xs" tt="uppercase" fw={700} c="dimmed">
