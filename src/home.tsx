@@ -1,4 +1,4 @@
-import {Button, Card, Center, Container, Grid, Image, Text} from '@mantine/core';
+import { Button, Card, Container, Grid, Image, Text } from '@mantine/core';
 import React from 'react';
 import Layout from './layout';
 import { UserInfoIcons } from './coleInfo';
@@ -23,13 +23,14 @@ const Home = () => {
             <Grid.Col span={10}>
               <Card shadow="sm" radius="md" withBorder>
                 <Card.Section component="a" href={resume}>
-                  <Image
-                    src={resumeImg}
-                    height={100}
-                    alt="Resume"
-                  />
+                  <Image src={resumeImg} height={100} alt="Resume" />
                 </Card.Section>
-                <Button variant="light" color="blue" fullWidth mt="sm" radius="md">
+                <Button
+                  variant="light"
+                  color="blue"
+                  fullWidth
+                  mt="sm"
+                  radius="md">
                   Download Resume
                 </Button>
               </Card>
