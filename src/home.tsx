@@ -25,14 +25,16 @@ const Home = () => {
                 <Card.Section component="a" href={resume}>
                   <Image src={resumeImg} height={100} alt="Resume" />
                 </Card.Section>
-                <Button
-                  variant="light"
-                  color="blue"
-                  fullWidth
-                  mt="sm"
-                  radius="md">
-                  Download Resume
-                </Button>
+                <a href={resume} download="colekoester.pdf">
+                  <Button
+                    variant="light"
+                    color="blue"
+                    fullWidth
+                    mt="sm"
+                    radius="md">
+                    Download Resume
+                  </Button>
+                </a>
               </Card>
             </Grid.Col>
           </Grid.Col>
