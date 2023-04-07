@@ -1,8 +1,10 @@
-import { Container, Grid, Text } from '@mantine/core';
+import {Button, Card, Center, Container, Grid, Image, Text} from '@mantine/core';
 import React from 'react';
 import Layout from './layout';
 import { UserInfoIcons } from './coleInfo';
-import meIcon from './koester.cole.jpg';
+import meIcon from './assets/koester.cole.jpg';
+import resume from './assets/resume.pdf';
+import resumeImg from './assets/resume.png';
 
 const Home = () => {
   return (
@@ -17,6 +19,21 @@ const Home = () => {
               phone="(443) 736-6751"
               email="me@colek.net"
             />
+            <br />
+            <Grid.Col span={10}>
+              <Card shadow="sm" radius="md" withBorder>
+                <Card.Section component="a" href={resume}>
+                  <Image
+                    src={resumeImg}
+                    height={100}
+                    alt="Resume"
+                  />
+                </Card.Section>
+                <Button variant="light" color="blue" fullWidth mt="sm" radius="md">
+                  Download Resume
+                </Button>
+              </Card>
+            </Grid.Col>
           </Grid.Col>
           <Grid.Col span={8}>
             <Text size="md">

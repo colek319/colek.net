@@ -1,11 +1,17 @@
 import Layout from './layout';
-import { Text } from '@mantine/core';
+import { Container, Grid, Text } from '@mantine/core';
 import React from 'react';
 
 const About = () => {
   return (
     <Layout>
-      <Text size="xl">Hello world</Text>
+      <Container>
+        <Grid justify="center">
+          <Grid.Col span={4}>
+            <Text size="md"> Nothing yet! </Text>
+          </Grid.Col>
+        </Grid>
+      </Container>
     </Layout>
   );
 };
