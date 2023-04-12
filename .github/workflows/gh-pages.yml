@@ -31,9 +31,8 @@ jobs:
           git config --local user.name "GitHub Action"
           git commit -m 'deploy'
       - name: Deploy
-        uses: ad-m/github-push-action@master
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          force: true
-          directory: ./dist
+          folder: dist
