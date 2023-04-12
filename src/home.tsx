@@ -4,7 +4,10 @@ import Layout from './layout';
 import { UserInfoIcons } from './coleInfo';
 import meIcon from './assets/koester.cole.jpg';
 
+const NotionApiToken = import.meta.env.VITE_NOTION_API_TOKEN;
+
 const Home = () => {
+  console.log(import.meta.env.VITE_NOTION_API_TOKEN)
   return (
     <Layout>
       <Container>
