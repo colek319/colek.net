@@ -4,10 +4,7 @@ import Layout from './layout';
 import { UserInfoIcons } from './coleInfo';
 import meIcon from './assets/koester.cole.jpg';
 
-const NotionApiToken = import.meta.env.VITE_NOTION_API_TOKEN;
-
 const Home = () => {
-  console.log(import.meta.env.VITE_NOTION_API_TOKEN);
   return (
     <Layout>
       <Container>
@@ -21,23 +18,6 @@ const Home = () => {
               email="me@colek.net"
             />
             <br />
-            {/*<Grid.Col span={10}>*/}
-            {/*  <Card shadow="sm" radius="md" withBorder>*/}
-            {/*    <Card.Section component="a" href={resume}>*/}
-            {/*      <Image src={resumeImg} height={100} alt="Resume" />*/}
-            {/*    </Card.Section>*/}
-            {/*    <a href={resume} download="colekoester.pdf">*/}
-            {/*      <Button*/}
-            {/*        variant="light"*/}
-            {/*        color="blue"*/}
-            {/*        fullWidth*/}
-            {/*        mt="sm"*/}
-            {/*        radius="md">*/}
-            {/*        Download Resume*/}
-            {/*      </Button>*/}
-            {/*    </a>*/}
-            {/*  </Card>*/}
-            {/*</Grid.Col>*/}
           </Grid.Col>
           <Grid.Col sm={12} lg={8}>
             <Text size="md">
@@ -61,6 +41,7 @@ const Home = () => {
               reliability and availability of networking data.
             </Text>
           </Grid.Col>
+          <Grid.Col sm={12} lg={12}></Grid.Col>
         </Grid>
       </Container>
     </Layout>
