@@ -1,8 +1,9 @@
 import { AppShell, MantineProvider } from '@mantine/core';
 import HeaderWithLinks from './headerWithLinks';
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 
-const Layout = (props: React.PropsWithChildren) => {
+const Layout = () => {
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>
       <AppShell
@@ -21,7 +22,7 @@ const Layout = (props: React.PropsWithChildren) => {
                 : theme.colors.gray[0],
           },
         })}>
-        {props.children}
+        <Outlet />
       </AppShell>
       );
     </MantineProvider>

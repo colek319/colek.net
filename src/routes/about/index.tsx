@@ -1,4 +1,3 @@
-import Layout from './layout';
 import { Container } from '@mantine/core';
 import React, { useEffect } from 'react';
 import { Client } from '@notionhq/client';
@@ -14,7 +13,7 @@ const notion = new Client({
   baseUrl: NotionReverseProxyBaseUrl,
 });
 
-const About = () => {
+const Index = () => {
   const [resumeBlocks, setResumeBlocks] = React.useState<NotionBlock[]>([]);
 
   useEffect(() => {
@@ -27,12 +26,10 @@ const About = () => {
   }, []);
 
   return (
-    <Layout>
-      <Container>
-        <Render blocks={resumeBlocks} useStyles />
-      </Container>
-    </Layout>
+    <Container>
+      <Render blocks={resumeBlocks} useStyles />
+    </Container>
   );
 };
 
-export default About;
+export default Index;

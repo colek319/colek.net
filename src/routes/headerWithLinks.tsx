@@ -7,7 +7,7 @@ import {
   rem,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import CatUrl from './assets/cat.svg';
+import CatUrl from '@assets/cat.svg';
 import { useNavigate } from 'react-router-dom';
 
 const useStyles = createStyles(theme => ({
