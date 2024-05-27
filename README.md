@@ -1,6 +1,6 @@
 # Build
 
-Using `npm`:
+using `npm`:
 
 ```
 npm install
