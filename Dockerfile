@@ -1,6 +1,6 @@
 # Fetch
 FROM golang:latest AS fetch-stage
-COPY go.mod go.sum /app
+COPY go.mod go.sum /app/
 WORKDIR /app
 RUN go mod download
 
@@ -14,7 +14,7 @@ RUN ["templ", "generate"]
 FROM golang:latest AS build-stage
 COPY --from=generate-stage /app /app
 WORKDIR /app
-RUN CGO_ENABLED=0 GOOS=linux go build -o /app/app
+RUN CGO_ENABLED=0 GOOS=linux go build -buildvcs=false -o /app/app
 
 # Test
 FROM build-stage AS test-stage
