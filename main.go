@@ -1,20 +1,21 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
+	"context"
+	"log"
+	"os"
 
-	"github.com/a-h/templ"
-	"github.com/colek319/colek.net/components"
+	"github.com/colek319/colek.net/templates"
 )
 
 func main() {
-	component := components.Hello("Cole")
+	f, err := os.Create("index.html")
+	if err != nil {
+		log.Fatalf("failed to create output file: %v", err)
+	}
 
-	http.Handle("/", templ.Handler(component))
-
-	fmt.Println("Listening on :8080")
-	if err := http.ListenAndServe(":8080", nil); err != nil {
-		fmt.Println(err)
+	err = templates.Resume("Cole").Render(context.Background(), f)
+	if err != nil {
+		log.Fatalf("failed to write output file: %v", err)
 	}
 }
