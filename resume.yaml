@@ -1,0 +1,29 @@
+header:
+  summary: Software developer with 5 years of experience in full-stack programming and cloud architectures, migrations, and operations. Improves and debugs large scale systems while minimizing user disruptions.
+  email: me@colek.net
+experience:
+  - title: Software Engineer, Production Infrastructure
+    company: Lyft Inc.
+    location: New York, NY
+    start: 11/2021
+    end: Present
+    entries:
+      - title: 'Zone Aware Routing: Improved intra availability zone routing with ROI of \$2 million.'
+        content:
+          - 'Reduced inter-AZ production inter-AZ traffic to 40\% of its original value. Deprecated error prone load balancing components.'
+          - 'Migrated 1416 microservices to envoy load balancing subsets.'
+          - 'Wrote design spec and grafana/kibana dashboards. Communicated with customer teams to debug load balancing edge cases.'
+      - title: 'No More Yaml (NoMoYa): Decreased time-to-deploy networking settings from 15 minutes to less than 30 seconds.'
+        content:
+          - 'Implemented new configuration API server (GoLang) and user interface (TypeScript + React) handling circuit breakers, health check endpoints, traffic migrations, and network dependency allow lists.'
+          - 'Improved team operations through self-service SEV mitigation, preventing context switching from team members.'
+      - title: 'Control Plane Backend Sharding: Collaborated with tech lead to simplify endpoint discovery.'
+        content:
+          - 'Transitioned from leader-elected writers to independent writers, enhancing service reliability and simplifying the deployment pipeline.'
+          - 'Implemented new data layer on control plane frontend and backend with 0 downtime, and a 99.95\% mesh availability SLA.'
+          - 'Parallelized service discovery queue reducing endpoint query latency by roughly 50\%.'
+      - title: 'Networking Day-to-Day'
+        content:
+          - 'Participated in debugging and mitigating more than 100 incidents through analyzing various kibana and prometheus queries, and SSHing into hosts themselves to validate networking components.'
+          - 'Performed technical deep dives on load balancing, did 30+ candidate interviews, actively helped in team planning, and acted as mentor for both interns and new-hires.'
+
