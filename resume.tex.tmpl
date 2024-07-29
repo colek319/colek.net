@@ -1,0 +1,142 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+\usepackage{tikz}
+\input{glyphtounicode}
+
+% font options
+\usepackage[sc]{mathpazo}
+\linespread{1.05}  % palladio needs more leading (space between lines)
+\usepackage[T1]{fontenc}
+
+\pagestyle{fancy}
+\fancyhf{}  % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength{\footskip}{5pt}
+
+% sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+% custom commands
+\newcommand{\cvitem}[1]{
+  \item\small{
+    {#1\vspace{-2pt}}
+  }
+}
+
+\newcommand{\cvproject}[2]{
+  \vspace{-4pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\small#1} & \small #2 \\
+    \end{tabular*}\vspace{-9pt}
+}
+
+\newcommand{\cvheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-9pt}
+}
+
+\newcommand{\cvheadingstart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\cvheadingend}{\end{itemize}}
+\newcommand{\cvitemstart}{\begin{itemize}\justifying}
+\newcommand{\cvitemend}{\end{itemize}\vspace{-5pt}}
+
+\newcommand{\cvskill}[2]{
+  \textcolor{black}{\textbf{#1}}\hfill
+  \foreach \x in {1,...,5}{%
+    \space{\ifnumgreater{\x}{#2}{\color{black!80!white!20}}{\color{black}}\faSquare}}\par%
+  \vspace{-2pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\footnotesize$\bullet$}}$}
+
+\begin{document}
+
+\begin{center}
+\textbf{\LARGE\scshape Cole Koester} \\
+\vspace{1pt}\small
+\href{mailto:}{{"{"}}{{.Header.Email}}{{"}"}}
+$\ \diamond\ $
+(443) 736-6751
+$\ \diamond\ $
+github://\href{https://github.com/}{colek319}
+$\ \diamond\ $
+linkedin://\href{https://www.linkedin.com/}{cole.koester}
+\end{center}
+
+\noindent\begin{minipage}{\textwidth}
+\footnotesize
+\textbf{Summary:} {{.Header.Summary}}
+\end{minipage}
+
+\section{Professional Experience}
+\cvheadingstart
+{{- range .Experience}}
+  \cvheading
+    {{"{"}}{{.Company}}{{"}"}}{{"{"}}{{.Location}}{{"}"}}
+    {{"{"}}\textbf{{"{"}}{{.Title}}{{"}}"}}{{"{"}}{{.Start}} - {{.End}}{{"}"}}}
+  {{- range .Entries}}
+    \cvproject{{"{"}}{{.Title}}{{"}"}}
+    \cvitemstart
+    {{- range .Content}}
+      \cvitem{{"{"}}{{.}}{{"}"}}
+    {{- end}}
+    \cvitemend
+  {{- end}}
+{{- end}}
+\cvheadingend
+
+\section{Education}
+\cvheadingstart
+  \cvheading
+    {Tufts University}{Somerville, MA}
+    {\textbf{Bachelor of Science in Mathematics | QuestBridge Scholar} }{}
+\cvheadingend
+
+\section{Skills \& Interests}
+\cvheadingstart
+\item
+\cvitemstart
+  {{- range .Competencies}}
+    \cvitem{{"{"}}\textbf{{"{"}}{{.Title}}{{"}"}}: {{index .Content 0}}{{"}"}}
+  {{- end}}
+\cvitemend
+\cvheadingend
+
+\end{document}

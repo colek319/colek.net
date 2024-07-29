@@ -2,44 +2,65 @@ package main
 
 import (
 	"fmt"
+	"os"
+
+	"gopkg.in/yaml.v3"
+
+	resume "github.com/colek319/colek.net/internal"
 )
 
 func main() {
-	resumeFileName := "resume.yaml"
-	resume, err := praseResumeYAML(resumeFileName)
+	handleGenerateLatexResume()
+	handleGenerateWebResume()
+}
+
+func handleGenerateLatexResume() {
+	res, err := readResumeYAML()
 	if err != nil {
-		fmt.Printf("Error: %v\n", err)
+		fmt.Printf("failed to read resume: %v\n", err)
 		return
 	}
-	fmt.Printf("%+v\n", resume)
-}
 
-func updateLatexResume(templateFilename string) []bytes {
-	// read latex resume template
-	// insert new content
+	latexTemplate, err := readLatexTemplate()
+	if err != nil {
+		fmt.Printf("failed to read latex template: %v\n", err)
+		return
+	}
+
 	// write to file
+	f, err := os.Create("resume.tex")
+	if err != nil {
+		fmt.Printf("failed to create file: %v\n", err)
+		return
+	}
+	defer func(f *os.File) { _ = f.Close() }(f)
+	resume.GenerateLatexResume(f, res, latexTemplate)
 }
 
-type Resume struct {
-	Header     Header       `yaml:"header"`
-	Experience []Experience `yaml:"experience"`
+func handleGenerateWebResume() {
+	// TODO: implement
+	return
 }
 
-type Header struct {
-	Summary string `yaml:"summary"`
-	Email   string `yaml:"email"`
+func readResumeYAML() (*resume.Resume, error) {
+	data, err := os.ReadFile("resume.yaml")
+	if err != nil {
+		return nil, fmt.Errorf("failed to read file: %v", err)
+	}
+
+	var res resume.Resume
+	err = yaml.Unmarshal(data, &res)
+	if err != nil {
+		return nil, fmt.Errorf("failed to unmarshal resume: %v", err)
+	}
+
+	return &res, nil
 }
 
-type Experience struct {
-	Title    string  `yaml:"title"`
-	Company  string  `yaml:"company"`
-	Location string  `yaml:"location"`
-	Start    string  `yaml:"start"`
-	End      string  `yaml:"end"`
-	Entries  []Entry `yaml:"entries"`
-}
-
-type Entry struct {
-	Title   string   `yaml:"title"`
-	Content []string `yaml:"content"`
+func readLatexTemplate() (string, error) {
+	data, err := os.ReadFile("resume.tex.tmpl")
+	if err != nil {
+		return "", fmt.Errorf("failed to read file: %v", err)
+	}
+	return string(data), nil
 }
