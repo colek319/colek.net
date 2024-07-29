@@ -110,9 +110,9 @@ linkedin://\href{https://www.linkedin.com/}{cole.koester}
 {{- range .Experience}}
   \cvheading
     {{"{"}}{{.Company}}{{"}"}}{{"{"}}{{.Location}}{{"}"}}
-    {{"{"}}\textbf{{"{"}}{{.Title}}{{"}}"}}{{"{"}}{{.Start}} - {{.End}}{{"}"}}}
+    {{"{"}}\textbf{{"{"}}{{.Title}}{{"}}"}}{{"{"}}{{.Start}} - {{.End}}{{"}"}}
   {{- range .Entries}}
-    \cvproject{{"{"}}{{.Title}}{{"}"}}
+    \cvproject{{"{"}}{{.Title}}{{"}"}}{{"{}"}}
     \cvitemstart
     {{- range .Content}}
       \cvitem{{"{"}}{{.}}{{"}"}}

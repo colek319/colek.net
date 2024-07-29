@@ -9,6 +9,10 @@ We use a GoLang script to generate a static html page hosting the resume written
 ## Making Changes
 To make changes to an existing resume:
 - Edit `resume.yaml`.
-- Run `Go run main.go` to generate the html page.
+- Run `Go run .` to generate the html page.
 
-If you want to change the schema, you will need to update schema defined in 
+If you want to change the schema, make changes to the `Resume` struct. Be sure to update `resume.yaml` 
+and `resume.tex.templ` to use the new schema.
+
+## Setup
+- On MacOS, install mactex, and use pdflatex to generate `resume.pdf`.
