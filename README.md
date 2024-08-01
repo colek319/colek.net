@@ -15,4 +15,4 @@ If you want to change the schema, make changes to the `Resume` struct. Be sure t
 and `resume.tex.templ` to use the new schema.
 
 ## Setup
-- On MacOS, install mactex, and use pdflatex to generate `resume.pdf`.
+- On MacOS, install mactex. You should be able to run `pdflatex resume.tex`.

@@ -26,6 +26,20 @@ experience:
         content:
           - 'Participated in debugging and mitigating more than 100 incidents through analyzing various kibana and prometheus queries, and SSHing into hosts themselves to validate networking components.'
           - 'Performed technical deep dives on load balancing, did 30+ candidate interviews, actively helped in team planning, and acted as mentor for both interns and new-hires.'
+  - title: Software Engineer, API
+    company: iManage LLC
+    location: Chicago, IL
+    start: 11/2019
+    end: 08/2021
+    entries:
+      - title: 'IP Whitelisting and Subdomains: Implemented requirements with ROI of \$1.8 M / Year.'
+        content:
+          - 'Implemented new authorization service in GoLang scaling to roughly 10M requests / day. Authorization service handled: vanity subdomains, IP whitelisting, and proxying to core auth service.'
+      - title: 'API Gateway: Deployed new API gateway edge proxy serving 30M requests / day with a 99.95\% success rate SLA.'
+        content:
+          - 'Defined and deployed envoy edge proxy configures separate listeners for internal/external clients, and multi-region traffic.'
+          - 'Deployed ratelimit service with a centralized configuration repo, reducing DDOS risk and putting backpressure on noisy internal services.'
+
 competencies:
   - title: 'Languages'
     content: ['GoLang, TypeScript, Python, Java, C++, C, Rust']
