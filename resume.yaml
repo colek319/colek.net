@@ -8,9 +8,9 @@ experience:
     start: 11/2021
     end: Present
     entries:
-      - title: 'Zone Aware Routing: Improved intra availability zone routing with ROI of \$2 million.'
+      - title: 'Zone Aware Routing: Improved intra availability zone routing with ROI of $2 million.'
         content:
-          - 'Reduced inter-AZ production inter-AZ traffic to 40\% of its original value. Deprecated error prone load balancing components.'
+          - 'Reduced inter-AZ production inter-AZ traffic to 40% of its original value. Deprecated error prone load balancing components.'
           - 'Migrated 1416 microservices to envoy load balancing subsets.'
           - 'Wrote design spec and grafana/kibana dashboards. Communicated with customer teams to debug load balancing edge cases.'
       - title: 'No More Yaml (NoMoYa): Decreased time-to-deploy networking settings from 15 minutes to less than 30 seconds.'
@@ -20,8 +20,8 @@ experience:
       - title: 'Control Plane Backend Sharding: Collaborated with tech lead to simplify endpoint discovery.'
         content:
           - 'Transitioned from leader-elected writers to independent writers, enhancing service reliability and simplifying the deployment pipeline.'
-          - 'Implemented new data layer on control plane frontend and backend with 0 downtime, and a 99.95\% mesh availability SLA.'
-          - 'Parallelized service discovery queue reducing endpoint query latency by roughly 50\%.'
+          - 'Implemented new data layer on control plane frontend and backend with 0 downtime, and a 99.95% mesh availability SLA.'
+          - 'Parallelized service discovery queue reducing endpoint query latency by roughly 50%.'
       - title: 'Networking Day-to-Day'
         content:
           - 'Participated in debugging and mitigating more than 100 incidents through analyzing various kibana and prometheus queries, and SSHing into hosts themselves to validate networking components.'
@@ -32,10 +32,10 @@ experience:
     start: 11/2019
     end: 08/2021
     entries:
-      - title: 'IP Whitelisting and Subdomains: Implemented requirements with ROI of \$1.8 M / Year.'
+      - title: 'IP Whitelisting and Subdomains: Implemented requirements with ROI of $1.8 M / Year.'
         content:
           - 'Implemented new authorization service in GoLang scaling to roughly 10M requests / day. Authorization service handled: vanity subdomains, IP whitelisting, and proxying to core auth service.'
-      - title: 'API Gateway: Deployed new API gateway edge proxy serving 30M requests / day with a 99.95\% success rate SLA.'
+      - title: 'API Gateway: Deployed new API gateway edge proxy serving 30M requests / day with a 99.95% success rate SLA.'
         content:
           - 'Defined and deployed envoy edge proxy configures separate listeners for internal/external clients, and multi-region traffic.'
           - 'Deployed ratelimit service with a centralized configuration repo, reducing DDOS risk and putting backpressure on noisy internal services.'

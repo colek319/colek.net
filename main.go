@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"os"
 
@@ -38,8 +39,26 @@ func handleGenerateLatexResume() {
 }
 
 func handleGenerateWebResume() {
-	// TODO: implement
-	return
+	res, err := readResumeYAML()
+	if err != nil {
+		fmt.Printf("failed to read resume: %v\n", err)
+		return
+	}
+
+	latexTemplate, err := readHTMLTemplate()
+	if err != nil {
+		fmt.Printf("failed to read HTML template: %v\n", err)
+		return
+	}
+
+	// write to file
+	f, err := os.Create("resume.html")
+	if err != nil {
+		fmt.Printf("failed to create file: %v\n", err)
+		return
+	}
+	defer func(f *os.File) { _ = f.Close() }(f)
+	resume.GenerateHTMLResume(f, res, latexTemplate)
 }
 
 func readResumeYAML() (*resume.Resume, error) {
@@ -59,6 +78,16 @@ func readResumeYAML() (*resume.Resume, error) {
 
 func readLatexTemplate() (string, error) {
 	data, err := os.ReadFile("resume.tex.tmpl")
+	if err != nil {
+		return "", fmt.Errorf("failed to read file: %v", err)
+	}
+	data = bytes.ReplaceAll(data, []byte(`%`), []byte(`\%`))
+	data = bytes.ReplaceAll(data, []byte(`$`), []byte(`\$`))
+	return string(data), nil
+}
+
+func readHTMLTemplate() (string, error) {
+	data, err := os.ReadFile("resume.html.tmpl")
 	if err != nil {
 		return "", fmt.Errorf("failed to read file: %v", err)
 	}
