@@ -1,7 +1,6 @@
 # colek.net
 
 Website hosting just a resume from now on. Maybe more later on.
-
 # Summary
 
 We use a GoLang script to generate a static html page hosting the resume written in `resume.yaml`.
