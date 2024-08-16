@@ -1,0 +1,171 @@
+%------------------------
+% Ethan's Résumé Template
+% Author: necusjz
+% License: CC-BY-4.0
+%------------------------
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+\usepackage{tikz}
+\input{glyphtounicode}
+
+% font options
+\usepackage[sc]{mathpazo}
+\linespread{1.05}  % palladio needs more leading (space between lines)
+\usepackage[T1]{fontenc}
+
+\pagestyle{fancy}
+\fancyhf{}  % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength{\footskip}{5pt}
+
+% sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+% custom commands
+\newcommand{\cvitem}[1]{
+  \item\small{
+    {#1\vspace{-2pt}}
+  }
+}
+
+\newcommand{\cvproject}[2]{
+  \vspace{-4pt}\item  % Reduced from -2pt to -4pt
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\small#1} & \small #2 \\
+    \end{tabular*}\vspace{-9pt}  % Reduced from -7pt to -9pt
+}
+
+\newcommand{\cvheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-9pt}  % Reduced from -7pt to -9pt
+}
+
+\newcommand{\cvheadingstart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\cvheadingend}{\end{itemize}}
+\newcommand{\cvitemstart}{\begin{itemize}\justifying}
+\newcommand{\cvitemend}{\end{itemize}\vspace{-5pt}}
+
+\newcommand{\cvskill}[2]{
+  \textcolor{black}{\textbf{#1}}\hfill
+  \foreach \x in {1,...,5}{%
+    \space{\ifnumgreater{\x}{#2}{\color{black!80!white!20}}{\color{black}}\faSquare}}\par%
+  \vspace{-2pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\footnotesize$\bullet$}}$}
+
+\begin{document}
+
+% contact information
+\begin{center}
+  \textbf{\LARGE\scshape Cole Koester} \\
+  \vspace{1pt}\small
+  \href{mailto:}{me@colek.net}
+  $\ \diamond\ $
+  (443) 736-6751
+  $\ \diamond\ $
+  github://\href{https://github.com/}{colek319}
+  $\ \diamond\ $
+  linkedin://\href{https://www.linkedin.com/}{cole.koester}
+\end{center}
+
+\noindent\begin{minipage}{\textwidth}
+\footnotesize
+\textbf{Summary:} Software developer with 5 years of experience in full-stack programming and cloud architectures, migrations, and operations. Improves and debugs large scale systems while minimizing user disruptions.
+\end{minipage}
+
+\section{Professional Experience}
+\cvheadingstart
+  \cvheading
+    {Lyft Inc.}{New York, NY}
+    {\textbf{Software Engineer, Production Infrastructure}}{11/2021 - Present}
+  \cvproject{Zone Aware Routing: Improved intra availability zone routing with ROI of \$2 million.}
+  \cvitemstart
+    \cvitem{Reduced inter-AZ production inter-AZ traffic to 40\% of its original value. Deprecated error prone load balancing components.}
+    \cvitem{Migrated 1416 microservices to envoy load balancing subsets.}
+    \cvitem{Wrote design spec and grafana/kibana dashboards. Communicated with customer teams to debug load balancing edge cases.}
+  \cvitemend
+  \cvproject{No More Yaml (NoMoYa): Decreased time-to-deploy networking settings from 15 minutes to less than 30 seconds.}{}
+  \cvitemstart
+    \cvitem{Implemented new configuration API server (GoLang) and user interface (TypeScript + React) handling circuit breakers, health check endpoints, traffic migrations, and network dependency allow lists.}
+    \cvitem{Improved team operations through self-service SEV mitigation, preventing context switching from team members.}
+  \cvitemend
+  \cvproject{Control Plane Backend Sharding: Collaborated with tech lead to simplify endpoint discovery.}{}
+  \cvitemstart
+    \cvitem{Transitioned from leader-elected writers to independent writers, enhancing service reliability and simplifying the deployment pipeline.}
+    \cvitem{Implemented new data layer on control plane frontend and backend with 0 downtime, and a 99.95\% mesh availability SLA.}
+    \cvitem{Parallelized service discovery queue reducing endpoint query latency by roughly 50\%.}
+  \cvitemend
+  \cvproject{Networking Day-to-Day}{}
+  \cvitemstart
+    \cvitem{Participated in debugging and mitigating more than 100 incidents through analyzing various kibana and prometheus queries, and SSHing into hosts themselves to validate networking components.}
+    \cvitem{Performed technical deep dives on load balancing, did 30+ candidate interviews, actively helped in team planning, and acted as mentor for both interns and new-hires.}
+  \cvitemend
+  \cvheading
+    {iManage LLC}{Chicago, IL}
+    {\textbf{Software Engineer, API}}{11/2019 - 08/2021}
+  \cvproject{IP Whitelisting and Subdomains: Implemented requirements with ROI of \$1.8 M / Year.}{}
+  \cvitemstart
+    \cvitem{Implemented new authorization service in GoLang scaling to roughly 10M requests / day. Authorization service handled: vanity subdomains, IP whitelisting, and proxying to core auth service.}
+  \cvitemend
+  \cvproject{API Gateway: Deployed new API gateway edge proxy serving 30M requests / day with a 99.95\% success rate SLA.}{}
+  \cvitemstart
+    \cvitem{Defined and deployed envoy edge proxy configures separate listeners for internal/external clients, and multi-region traffic.}
+    \cvitem{Deployed ratelimit service with a centralized configuration repo, reducing DDOS risk and putting backpressure on noisy internal services.}
+  \cvitemend
+\cvheadingend
+
+\section{Education}
+\cvheadingstart
+  \cvheading
+    {Tufts University}{Somerville, MA}
+    {\textbf{Bachelor of Science in Mathematics | QuestBridge Scholar} }{}
+\cvheadingend
+
+\section{Skills \& Interests}
+\cvheadingstart
+\item
+\cvitemstart
+  \cvitem{\textbf{Technical Skills:} GoLang, Envoy, Terraform, Kubernetes, AWS (R53, EC2, Cloudfront), Python, C++, Noob TypeScript + React, Crying}
+  \cvitem{\href{https://arxiv.org/}{Publications}}
+\cvitemend
+\cvheadingend
+
+\end{document}

@@ -1,25 +1,17 @@
-# Build
+# colek.net
 
-using `npm`:
+Website hosting just a resume from now on. Maybe more later on.
+# Summary
 
-```
-npm install
-npm run build
-```
+We use a GoLang script to generate a static html page hosting the resume written in `resume.yaml`.
 
-If you get lint errors: `npm run lint`
+## Making Changes
+To make changes to an existing resume:
+- Edit `resume.yaml`.
+- Run `Go run .` to generate the html page.
 
-# Dev
+If you want to change the schema, make changes to the `Resume` struct. Be sure to update `resume.yaml` 
+and `resume.tex.templ` to use the new schema.
 
-Run:
-
-```
-npm run dev
-```
-
-# Gotchas
-
-Vite has it's own handling of static assets. First, see if the desired asset is in the `assetsInclude` field of
-the Vite config `vite.config.ts`. This will tell Vite to resolve the url to `dist/assets`. We then import these in
-`src/*.tsx` as `import staticURL from 'asset.svg` and use them as URLs. There are examples on how they're used in
-the code.
+## Setup
+- On MacOS, install mactex. You should be able to run `pdflatex resume.tex`.

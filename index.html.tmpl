@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+			margin: 0;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+			text-align: left;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .experience-item {
+            margin-bottom: 20px;
+        }
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .company-location {
+            font-style: italic;
+            color: #7f8c8d;
+			margin: 0;
+        }
+        ul {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Cole Koester</h1>
+        <p>{{.Header.Summary}}</p>
+    </div>
+
+    {{- range .Experience}}
+        <div class="experience-item">
+            <div class="experience-header">
+                <h3>{{- .Company}}</h3>
+                <span>{{- .Location}}</span>
+            </div>
+            <p class="company-location">{{.Title}}, {{.Start}} - {{.End}}</p>
+            {{- range .Entries}}
+                <h4>{{- .Title}}</h4>
+                <ul>
+                    {{- range .Content}}
+                        <li>{{.}}</li>
+                    {{- end}}
+                </ul>
+            {{- end}}
+        </div>
+    {{- end}}
+
+    <h2>Competencies</h2>
+    {{- range .Competencies}}
+        <ul>
+            <li>{{.Title}}: {{range .Content}}{{.}}{{end}}.</li>
+        </ul>
+    {{- end}}
+</body>
+</html>
