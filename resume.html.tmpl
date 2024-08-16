@@ -13,12 +13,14 @@
             margin: 0 auto;
             padding: 20px;
         }
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             color: #2c3e50;
+			margin: 0;
         }
         .header {
             text-align: center;
             margin-bottom: 30px;
+			text-align: left;
         }
         .section {
             margin-bottom: 30px;
@@ -34,27 +36,26 @@
         .company-location {
             font-style: italic;
             color: #7f8c8d;
+			margin: 0;
         }
         ul {
-            margin-top: 5px;
+            margin: 0;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Resume</h1>
+        <h1>Cole Koester</h1>
         <p>{{.Header.Summary}}</p>
-        <p>Email: {{.Header.Email}}</p>
     </div>
 
-    <h2>Experience</h2>
     {{- range .Experience}}
         <div class="experience-item">
             <div class="experience-header">
-                <h3>{{.Title}}</h3>
-                <span>{{.Start}} - {{.End}}</span>
+                <h3>{{- .Company}}</h3>
+                <span>{{- .Location}}</span>
             </div>
-            <p class="company-location">{{- .Company}}, {{- .Location}}</p>
+            <p class="company-location">{{.Title}}, {{.Start}} - {{.End}}</p>
             {{- range .Entries}}
                 <h4>{{- .Title}}</h4>
                 <ul>
@@ -68,11 +69,8 @@
 
     <h2>Competencies</h2>
     {{- range .Competencies}}
-        <h3>{{.Title}}</h3>
         <ul>
-            {{- range .Content}}
-                <li>{{.}}</li>
-            {{- end}}
+            <li>{{.Title}}: {{range .Content}}{{.}}{{end}}.</li>
         </ul>
     {{- end}}
 </body>
