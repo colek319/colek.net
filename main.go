@@ -52,7 +52,7 @@ func handleGenerateWebResume() {
 	}
 
 	// write to file
-	f, err := os.Create("resume.html")
+	f, err := os.Create("index.html")
 	if err != nil {
 		fmt.Printf("failed to create file: %v\n", err)
 		return
@@ -87,7 +87,7 @@ func readLatexTemplate() (string, error) {
 }
 
 func readHTMLTemplate() (string, error) {
-	data, err := os.ReadFile("resume.html.tmpl")
+	data, err := os.ReadFile("index.html.tmpl")
 	if err != nil {
 		return "", fmt.Errorf("failed to read file: %v", err)
 	}

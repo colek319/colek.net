@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+			margin: 0;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+			text-align: left;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .experience-item {
+            margin-bottom: 20px;
+        }
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .company-location {
+            font-style: italic;
+            color: #7f8c8d;
+			margin: 0;
+        }
+        ul {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Cole Koester</h1>
+        <p>Software developer with 5 years of experience in full-stack programming and cloud architectures, migrations, and operations. Improves and debugs large scale systems while minimizing user disruptions.</p>
+    </div>
+        <div class="experience-item">
+            <div class="experience-header">
+                <h3>Lyft Inc.</h3>
+                <span>New York, NY</span>
+            </div>
+            <p class="company-location">Software Engineer, Production Infrastructure, 11/2021 - Present</p>
+                <h4>Zone Aware Routing: Improved intra availability zone routing with ROI of $2 million.</h4>
+                <ul>
+                        <li>Reduced inter-AZ production inter-AZ traffic to 40% of its original value. Deprecated error prone load balancing components.</li>
+                        <li>Migrated 1416 microservices to envoy load balancing subsets.</li>
+                        <li>Wrote design spec and grafana/kibana dashboards. Communicated with customer teams to debug load balancing edge cases.</li>
+                </ul>
+                <h4>No More Yaml (NoMoYa): Decreased time-to-deploy networking settings from 15 minutes to less than 30 seconds.</h4>
+                <ul>
+                        <li>Implemented new configuration API server (GoLang) and user interface (TypeScript + React) handling circuit breakers, health check endpoints, traffic migrations, and network dependency allow lists.</li>
+                        <li>Improved team operations through self-service SEV mitigation, preventing context switching from team members.</li>
+                </ul>
+                <h4>Control Plane Backend Sharding: Collaborated with tech lead to simplify endpoint discovery.</h4>
+                <ul>
+                        <li>Transitioned from leader-elected writers to independent writers, enhancing service reliability and simplifying the deployment pipeline.</li>
+                        <li>Implemented new data layer on control plane frontend and backend with 0 downtime, and a 99.95% mesh availability SLA.</li>
+                        <li>Parallelized service discovery queue reducing endpoint query latency by roughly 50%.</li>
+                </ul>
+                <h4>Networking Day-to-Day</h4>
+                <ul>
+                        <li>Participated in debugging and mitigating more than 100 incidents through analyzing various kibana and prometheus queries, and SSHing into hosts themselves to validate networking components.</li>
+                        <li>Performed technical deep dives on load balancing, did 30+ candidate interviews, actively helped in team planning, and acted as mentor for both interns and new-hires.</li>
+                </ul>
+        </div>
+        <div class="experience-item">
+            <div class="experience-header">
+                <h3>iManage LLC</h3>
+                <span>Chicago, IL</span>
+            </div>
+            <p class="company-location">Software Engineer, API, 11/2019 - 08/2021</p>
+                <h4>IP Whitelisting and Subdomains: Implemented requirements with ROI of $1.8 M / Year.</h4>
+                <ul>
+                        <li>Implemented new authorization service in GoLang scaling to roughly 10M requests / day. Authorization service handled: vanity subdomains, IP whitelisting, and proxying to core auth service.</li>
+                </ul>
+                <h4>API Gateway: Deployed new API gateway edge proxy serving 30M requests / day with a 99.95% success rate SLA.</h4>
+                <ul>
+                        <li>Defined and deployed envoy edge proxy configures separate listeners for internal/external clients, and multi-region traffic.</li>
+                        <li>Deployed ratelimit service with a centralized configuration repo, reducing DDOS risk and putting backpressure on noisy internal services.</li>
+                </ul>
+        </div>
+
+    <h2>Competencies</h2>
+        <ul>
+            <li>Languages: GoLang, TypeScript, Python, Java, C++, C, Rust.</li>
+        </ul>
+        <ul>
+            <li>Tools: Envoy, Kubernetes, Docker, Prometheus, Grafana, Kibana, Terraform, AWS, GCP.</li>
+        </ul>
+</body>
+</html>
