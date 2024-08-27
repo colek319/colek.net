@@ -45,4 +45,4 @@ competencies:
   - title: 'Languages'
     content: ['GoLang, TypeScript, Python, Bash, Java, C++, C, Rust']
   - title: 'Tools'
-    content: ['Envoy, Kubernetes, Terraform, Docker, React, Prometheus, Grafana, Kibana, AWS']
+    content: ['Envoy, AWS, Kubernetes, Terraform, Docker, React, Prometheus/PromQL, Grafana, Kibana']
