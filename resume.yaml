@@ -10,8 +10,9 @@ experience:
     entries:
       - title: 'Zone Aware Routing: Improved intra availability zone routing with ROI of $2 million.'
         content:
-          - 'Reduced inter-AZ production inter-AZ traffic to 40% of its original value. Deprecated error prone load balancing components.'
+          - 'Reduced inter-AZ production traffic by 40%.'
           - 'Migrated 1416 microservices to envoy load balancing subsets.'
+          - 'Deprecated error prone load balancing components in favor of configuring load balancing subsets in Envoy.'
           - 'Wrote design spec and grafana/kibana dashboards. Communicated with customer teams to debug load balancing edge cases.'
       - title: 'No More Yaml (NoMoYa): Decreased time-to-deploy networking settings from 15 minutes to less than 30 seconds.'
         content:
@@ -42,6 +43,6 @@ experience:
 
 competencies:
   - title: 'Languages'
-    content: ['GoLang, TypeScript, Python, Java, C++, C, Rust']
+    content: ['GoLang, TypeScript, Python, Bash, Java, C++, C, Rust']
   - title: 'Tools'
-    content: ['Envoy, Kubernetes, Docker, Prometheus, Grafana, Kibana, Terraform, AWS, GCP']
+    content: ['Envoy, Kubernetes, Terraform, Docker, React, Prometheus, Grafana, Kibana, AWS']

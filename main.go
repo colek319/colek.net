@@ -16,7 +16,7 @@ func main() {
 }
 
 func handleGenerateLatexResume() {
-	res, err := readResumeYAML()
+	res, err := readResumeYAML(true)
 	if err != nil {
 		fmt.Printf("failed to read resume: %v\n", err)
 		return
@@ -39,7 +39,7 @@ func handleGenerateLatexResume() {
 }
 
 func handleGenerateWebResume() {
-	res, err := readResumeYAML()
+	res, err := readResumeYAML(false)
 	if err != nil {
 		fmt.Printf("failed to read resume: %v\n", err)
 		return
@@ -61,10 +61,15 @@ func handleGenerateWebResume() {
 	resume.GenerateHTMLResume(f, res, latexTemplate)
 }
 
-func readResumeYAML() (*resume.Resume, error) {
+func readResumeYAML(escapeSymbols bool) (*resume.Resume, error) {
 	data, err := os.ReadFile("resume.yaml")
 	if err != nil {
 		return nil, fmt.Errorf("failed to read file: %v", err)
+	}
+
+	if escapeSymbols {
+		data = bytes.ReplaceAll(data, []byte(`%`), []byte(`\%`))
+		data = bytes.ReplaceAll(data, []byte(`$`), []byte(`\$`))
 	}
 
 	var res resume.Resume
@@ -81,8 +86,6 @@ func readLatexTemplate() (string, error) {
 	if err != nil {
 		return "", fmt.Errorf("failed to read file: %v", err)
 	}
-	data = bytes.ReplaceAll(data, []byte(`%`), []byte(`\%`))
-	data = bytes.ReplaceAll(data, []byte(`$`), []byte(`\$`))
 	return string(data), nil
 }
 
