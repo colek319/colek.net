@@ -112,12 +112,14 @@ linkedin://\href{https://www.linkedin.com/}{cole.koester}
     {{"{"}}{{.Company}}{{"}"}}{{"{"}}{{.Location}}{{"}"}}
     {{"{"}}\textbf{{"{"}}{{.Title}}{{"}}"}}{{"{"}}{{.Start}} - {{.End}}{{"}"}}
   {{- range .Entries}}
-    \cvproject{{"{"}}{{.Title}}{{"}"}}{{"{}"}}
-    \cvitemstart
-    {{- range .Content}}
-      \cvitem{{"{"}}{{.}}{{"}"}}
-    {{- end}}
-    \cvitemend
+    {{- if .IncludeInLatex }}
+	  \cvproject{{"{"}}{{.Title}}{{"}"}}{{"{}"}}
+      \cvitemstart
+      {{- range .Content}}
+        \cvitem{{"{"}}{{.}}{{"}"}}
+      {{- end}}
+      \cvitemend
+    {{- end }}
   {{- end}}
 {{- end}}
 \cvheadingend

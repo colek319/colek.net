@@ -9,21 +9,25 @@ experience:
     end: Present
     entries:
       - title: 'Zone Aware Routing: Improved intra availability zone routing with ROI of $2 million.'
+        include_in_latex: true
         content:
           - 'Reduced inter-AZ production traffic by 40%.'
           - 'Migrated 1416 microservices to envoy load balancing subsets.'
           - 'Deprecated error prone load balancing components in favor of configuring load balancing subsets in Envoy.'
           - 'Wrote design spec and grafana/kibana dashboards. Communicated with customer teams to debug load balancing edge cases.'
       - title: 'No More Yaml (NoMoYa): Decreased time-to-deploy networking settings from 15 minutes to less than 30 seconds.'
+        include_in_latex: true
         content:
           - 'Implemented new configuration API server (GoLang) and user interface (TypeScript + React) handling circuit breakers, health check endpoints, traffic migrations, and network dependency allow lists.'
           - 'Improved team operations through self-service SEV mitigation, preventing context switching from team members.'
       - title: 'Control Plane Backend Sharding: Collaborated with tech lead to simplify endpoint discovery.'
+        include_in_latex: true
         content:
           - 'Transitioned from leader-elected writers to independent writers, enhancing service reliability and simplifying the deployment pipeline.'
           - 'Implemented new data layer on control plane frontend and backend with 0 downtime, and a 99.95% mesh availability SLA.'
           - 'Parallelized service discovery queue reducing endpoint query latency by roughly 50%.'
       - title: 'Networking Day-to-Day'
+        include_in_latex: true
         content:
           - 'Participated in debugging and mitigating more than 100 incidents through analyzing various kibana and prometheus queries, and SSHing into hosts themselves to validate networking components.'
           - 'Performed technical deep dives on load balancing, did 30+ candidate interviews, actively helped in team planning, and acted as mentor for both interns and new-hires.'
@@ -34,15 +38,19 @@ experience:
     end: 08/2021
     entries:
       - title: 'IP Whitelisting and Subdomains: Implemented requirements with ROI of $1.8 M / Year.'
+        include_in_latex: true
         content:
           - 'Implemented new authorization service in GoLang scaling to roughly 10M requests / day. Authorization service handled: vanity subdomains, IP whitelisting, and proxying to core auth service.'
       - title: 'API Gateway: Deployed new API gateway edge proxy serving 30M requests / day with a 99.95% success rate SLA.'
+        include_in_latex: true
         content:
           - 'Defined and deployed envoy edge proxy configures separate listeners for internal/external clients, and multi-region traffic.'
           - 'Deployed ratelimit service with a centralized configuration repo, reducing DDOS risk and putting backpressure on noisy internal services.'
 
 competencies:
   - title: 'Languages'
+    include_in_latex: true
     content: ['GoLang, TypeScript, Python, Bash, Java, C++, C, Rust']
   - title: 'Tools'
+    include_in_latex: true
     content: ['Envoy, AWS, Kubernetes, Terraform, Docker, React, Prometheus/PromQL, Grafana, Kibana']

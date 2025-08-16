@@ -43,6 +43,7 @@ type Experience struct {
 }
 
 type Entry struct {
-	Title   string   `yaml:"title"`
-	Content []string `yaml:"content"`
+	Title          string   `yaml:"title"`
+	Content        []string `yaml:"content"`
+	IncludeInLatex bool     `yaml:"include_in_latex"`
 }
