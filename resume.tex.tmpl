@@ -1,4 +1,5 @@
-\documentclass[letterpaper,11pt]{article}
+{{ printf
+`\documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -106,23 +107,27 @@ linkedin://\href{https://www.linkedin.com/}{cole.koester}
 \end{minipage}
 
 \section{Professional Experience}
-\cvheadingstart
+\cvheadingstart`
+}}
+
 {{- range .Experience}}
-  \cvheading
-    {{"{"}}{{.Company}}{{"}"}}{{"{"}}{{.Location}}{{"}"}}
-    {{"{"}}\textbf{{"{"}}{{.Title}}{{"}}"}}{{"{"}}{{.Start}} - {{.End}}{{"}"}}
+  {{
+    printf `\cvheading{%s}{%s}{\textbf{%s}}{%s - %s}`
+    .Company .Location .Title .Start .End
+  }}
   {{- range .Entries}}
     {{- if .IncludeInLatex }}
-	  \cvproject{{"{"}}{{.Title}}{{"}"}}{{"{}"}}
-      \cvitemstart
+	  {{ printf "\\cvproject{%s}{}" .Title }}
+      {{ printf `\cvitemstart` }}
       {{- range .Content}}
-        \cvitem{{"{"}}{{.}}{{"}"}}
+        {{ printf `\cvitem{%s}` . }}
       {{- end}}
-      \cvitemend
+      {{ printf `\cvitemend` }}
     {{- end }}
   {{- end}}
 {{- end}}
-\cvheadingend
+{{ printf
+`\cvheadingend
 
 \section{Education}
 \cvheadingstart
@@ -134,11 +139,15 @@ linkedin://\href{https://www.linkedin.com/}{cole.koester}
 \section{Skills \& Interests}
 \cvheadingstart
 \item
-\cvitemstart
+\cvitemstart`
+}}
   {{- range .Competencies}}
-    \cvitem{{"{"}}\textbf{{"{"}}{{.Title}}{{"}"}}: {{index .Content 0}}{{"}"}}
+    {{ printf `\cvitem{\textbf{%s}: %s}` .Title (index .Content 0) }}
   {{- end}}
-\cvitemend
+{{ printf
+`\cvitemend
 \cvheadingend
 
-\end{document}
+\end{document}`
+}}
+
