@@ -81,15 +81,17 @@
                 <h3>{{- .Company}}</h3>
                 <span>{{- .Location}}</span>
             </div>
-            <p class="company-location">{{.Title}}, {{.Start}} - {{.End}}</p>
-            {{- range .Entries}}
-                <h4>{{- .Title}}</h4>
-                <ul>
-                    {{- range .Content}}
-                        <li>{{.}}</li>
-                    {{- end}}
-                </ul>
-            {{- end}}
+			{{- range .Roles}}
+                <p class="company-location">{{.Title}}, {{.Start}} - {{.End}}</p>
+                {{- range .Entries}}
+                    <h4>{{- .Title}}</h4>
+                    <ul>
+                        {{- range .Content}}
+                            <li>{{.}}</li>
+                        {{- end}}
+                    </ul>
+                {{- end}}
+			{{- end}}
         </div>
     {{- end}}
 

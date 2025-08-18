@@ -34,12 +34,16 @@ type Header struct {
 }
 
 type Experience struct {
-	Title    string  `yaml:"title"`
-	Company  string  `yaml:"company"`
-	Location string  `yaml:"location"`
-	Start    string  `yaml:"start"`
-	End      string  `yaml:"end"`
-	Entries  []Entry `yaml:"entries"`
+	Company  string `yaml:"company"`
+	Location string `yaml:"location"`
+	Roles    []Role `yaml:"roles"`
+}
+
+type Role struct {
+	Title   string  `yaml:"title"`
+	Start   string  `yaml:"start"`
+	End     string  `yaml:"end"`
+	Entries []Entry `yaml:"entries"`
 }
 
 type Entry struct {
