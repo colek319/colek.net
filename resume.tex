@@ -60,7 +60,7 @@
 \newcommand{\cvproject}[2]{
   \vspace{-4pt}\item
     \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{\small#1} & \small #2 \\
+      \textbf{\footnotesize#1} & \footnotesize #2 \\
     \end{tabular*}\vspace{-9pt}
 }
 
@@ -70,6 +70,15 @@
       \textbf{#1} & #2 \\
       \small#3 & \small #4 \\
     \end{tabular*}\vspace{-9pt}
+}
+
+\newcommand{\cvcompany}[2]{%
+  \vspace{-2pt}\item
+  \textbf{\large #1} \hfill \large #2 \\
+}
+
+\newcommand{\cvrole}[2]{%
+  \small\textsc{#1} \hfill \small\textsc{#2} \par\vspace{-2pt}
 }
 
 \newcommand{\cvheadingstart}{\begin{itemize}[leftmargin=0in, label={}]}
@@ -107,4 +116,68 @@ linkedin://\href{https://www.linkedin.com/}{cole.koester}
 
 \section{Professional Experience}
 \cvheadingstart
-  
+  \cvcompany{Lyft Inc.}{New York, NY}
+    \cvrole{\textbf{Software Engineer, Marketplace Forecasting}}{12/2024 - Present}
+        \cvproject{Demand by Distance Buckets: ...}{}
+        \cvitemstart
+          \cvitem{Did stuff}
+        \cvitemend
+        \cvproject{Forecasting Latency SLOs: ...}{}
+        \cvitemstart
+          \cvitem{more stuff}
+        \cvitemend
+    \cvrole{\textbf{Software Engineer, Production Infrastructure}}{11/2021 - 12/2024}
+        \cvproject{Zone Aware Routing: Improved intra availability zone routing with ROI of \$2 million.}{}
+        \cvitemstart
+          \cvitem{Reduced inter-AZ production traffic by 40\%.}
+          \cvitem{Migrated 1416 microservices to envoy load balancing subsets.}
+          \cvitem{Deprecated error prone load balancing components in favor of configuring load balancing subsets in Envoy.}
+          \cvitem{Wrote design spec and grafana/kibana dashboards. Communicated with customer teams to debug load balancing edge cases.}
+        \cvitemend
+        \cvproject{No More Yaml (NoMoYa): Decreased time-to-deploy networking settings from 15 minutes to less than 30 seconds.}{}
+        \cvitemstart
+          \cvitem{Implemented new configuration API server (GoLang) and user interface (TypeScript + React) handling circuit breakers, health check endpoints, traffic migrations, and network dependency allow lists.}
+          \cvitem{Improved team operations through self-service SEV mitigation, preventing context switching from team members.}
+        \cvitemend
+        \cvproject{Control Plane Backend Sharding: Collaborated with tech lead to simplify endpoint discovery.}{}
+        \cvitemstart
+          \cvitem{Transitioned from leader-elected writers to independent writers, enhancing service reliability and simplifying the deployment pipeline.}
+          \cvitem{Implemented new data layer on control plane frontend and backend with 0 downtime, and a 99.95\% mesh availability SLA.}
+          \cvitem{Parallelized service discovery queue reducing endpoint query latency by roughly 50\%.}
+        \cvitemend
+        \cvproject{Networking Day-to-Day}{}
+        \cvitemstart
+          \cvitem{Participated in debugging and mitigating more than 100 incidents through analyzing various kibana and prometheus queries, and SSHing into hosts themselves to validate networking components.}
+          \cvitem{Performed technical deep dives on load balancing, did 30+ candidate interviews, actively helped in team planning, and acted as mentor for both interns and new-hires.}
+        \cvitemend
+  \cvcompany{iManage LLC}{Chicago, IL}
+    \cvrole{\textbf{Software Engineer, API}}{11/2019 - 08/2021}
+        \cvproject{IP Whitelisting and Subdomains: Implemented requirements with ROI of \$1.8 M / Year.}{}
+        \cvitemstart
+          \cvitem{Implemented new authorization service in GoLang scaling to roughly 10M requests / day. Authorization service handled: vanity subdomains, IP whitelisting, and proxying to core auth service.}
+        \cvitemend
+        \cvproject{API Gateway: Deployed new API gateway edge proxy serving 30M requests / day with a 99.95\% success rate SLA.}{}
+        \cvitemstart
+          \cvitem{Defined and deployed envoy edge proxy configures separate listeners for internal/external clients, and multi-region traffic.}
+          \cvitem{Deployed ratelimit service with a centralized configuration repo, reducing DDOS risk and putting backpressure on noisy internal services.}
+        \cvitemend
+\cvheadingend
+
+\section{Education}
+\cvheadingstart
+  \cvheading
+    {Tufts University}{Somerville, MA}
+    {\textbf{Bachelor of Science in Mathematics | QuestBridge Scholar} }{}
+\cvheadingend
+
+\section{Skills \& Interests}
+\cvheadingstart
+\item
+\cvitemstart
+    \cvitem{\textbf{Languages}: GoLang, TypeScript, Python, Bash, Java, C++, C, Rust}
+    \cvitem{\textbf{Tools}: Envoy, AWS, Kubernetes, Terraform, Docker, React, Prometheus/PromQL, Grafana, Kibana}
+\cvitemend
+\cvheadingend
+
+\end{document}
+

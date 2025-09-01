@@ -61,7 +61,7 @@
 \newcommand{\cvproject}[2]{
   \vspace{-4pt}\item
     \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{\small#1} & \small #2 \\
+      \textbf{\footnotesize#1} & \footnotesize #2 \\
     \end{tabular*}\vspace{-9pt}
 }
 
@@ -71,6 +71,15 @@
       \textbf{#1} & #2 \\
       \small#3 & \small #4 \\
     \end{tabular*}\vspace{-9pt}
+}
+
+\newcommand{\cvcompany}[2]{%%
+  \vspace{-2pt}\item
+  \textbf{\large #1} \hfill \large #2 \\
+}
+
+\newcommand{\cvrole}[2]{%%
+  \small\textsc{#1} \hfill \small\textsc{#2} \par\vspace{-2pt}
 }
 
 \newcommand{\cvheadingstart}{\begin{itemize}[leftmargin=0in, label={}]}
@@ -110,22 +119,22 @@ linkedin://\href{https://www.linkedin.com/}{cole.koester}
 \cvheadingstart`
 }}
 
-{{- range .Experience}}
-  {{
-    printf `\cvheading{%s}{%s}{\textbf{%s}}{%s - %s}`
-    .Company .Location .Title .Start .End
-  }}
-  {{- range .Entries}}
-    {{- if .IncludeInLatex }}
-	  {{ printf "\\cvproject{%s}{}" .Title }}
-      {{ printf `\cvitemstart` }}
-      {{- range .Content}}
-        {{ printf `\cvitem{%s}` . }}
-      {{- end}}
-      {{ printf `\cvitemend` }}
+{{- range .Experience }}
+  {{ printf `\cvcompany{%s}{%s}` .Company .Location }}
+  {{- range .Roles }}
+    {{ printf `\cvrole{\textbf{%s}}{%s - %s}` .Title .Start .End }}
+    {{- range .Entries }}
+      {{- if .IncludeInLatex }}
+        {{ printf "\\cvproject{%s}{}" .Title }}
+        {{ printf `\cvitemstart` }}
+        {{- range .Content }}
+          {{ printf `\cvitem{%s}` . }}
+        {{- end }}
+        {{ printf `\cvitemend` }}
+      {{- end }}
     {{- end }}
-  {{- end}}
-{{- end}}
+  {{- end }}
+{{- end }}
 {{ printf
 `\cvheadingend
 
