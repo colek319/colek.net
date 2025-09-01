@@ -1,4 +1,5 @@
-\documentclass[letterpaper,11pt]{article}
+{{ printf
+`\documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -52,7 +53,7 @@
 
 % custom commands
 \newcommand{\cvitem}[1]{
-  \item\small{
+  \item\footnotesize{
     {#1\vspace{-2pt}}
   }
 }
@@ -60,7 +61,7 @@
 \newcommand{\cvproject}[2]{
   \vspace{-4pt}\item
     \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{\small#1} & \small #2 \\
+      \textbf{\footnotesize#1} & \footnotesize #2 \\
     \end{tabular*}\vspace{-9pt}
 }
 
@@ -70,6 +71,15 @@
       \textbf{#1} & #2 \\
       \small#3 & \small #4 \\
     \end{tabular*}\vspace{-9pt}
+}
+
+\newcommand{\cvcompany}[2]{%%
+  \vspace{-2pt}\item
+  \textbf{\large #1} \hfill \large #2 \\
+}
+
+\newcommand{\cvrole}[2]{%%
+  \vspace{2pt}\small\textsc{#1} \hfill \small\textsc{#2} \par\vspace{-4pt}
 }
 
 \newcommand{\cvheadingstart}{\begin{itemize}[leftmargin=0in, label={}]}
@@ -106,21 +116,27 @@ linkedin://\href{https://www.linkedin.com/}{cole.koester}
 \end{minipage}
 
 \section{Professional Experience}
-\cvheadingstart
-{{- range .Experience}}
-  \cvheading
-    {{"{"}}{{.Company}}{{"}"}}{{"{"}}{{.Location}}{{"}"}}
-    {{"{"}}\textbf{{"{"}}{{.Title}}{{"}}"}}{{"{"}}{{.Start}} - {{.End}}{{"}"}}
-  {{- range .Entries}}
-    \cvproject{{"{"}}{{.Title}}{{"}"}}{{"{}"}}
-    \cvitemstart
-    {{- range .Content}}
-      \cvitem{{"{"}}{{.}}{{"}"}}
-    {{- end}}
-    \cvitemend
-  {{- end}}
-{{- end}}
-\cvheadingend
+\cvheadingstart`
+}}
+
+{{- range .Experience }}
+  {{ printf `\cvcompany{%s}{%s}` .Company .Location }}
+  {{- range .Roles }}
+    {{ printf `\cvrole{\textbf{%s}}{%s - %s}` .Title .Start .End }}
+    {{- range .Entries }}
+      {{- if .IncludeInLatex }}
+        {{ printf "\\cvproject{%s}{}" .Title }}
+        {{ printf `\cvitemstart` }}
+        {{- range .Content }}
+          {{ printf `\cvitem{%s}` . }}
+        {{- end }}
+        {{ printf `\cvitemend` }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{ printf
+`\cvheadingend
 
 \section{Education}
 \cvheadingstart
@@ -132,11 +148,15 @@ linkedin://\href{https://www.linkedin.com/}{cole.koester}
 \section{Skills \& Interests}
 \cvheadingstart
 \item
-\cvitemstart
+\cvitemstart`
+}}
   {{- range .Competencies}}
-    \cvitem{{"{"}}\textbf{{"{"}}{{.Title}}{{"}"}}: {{index .Content 0}}{{"}"}}
+    {{ printf `\cvitem{\textbf{%s}: %s}` .Title (index .Content 0) }}
   {{- end}}
-\cvitemend
+{{ printf
+`\cvitemend
 \cvheadingend
 
-\end{document}
+\end{document}`
+}}
+
