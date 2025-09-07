@@ -68,31 +68,31 @@
     <div class="header">
         <h1>Cole Koester</h1>
         <div class="download-button">
-            <a href="/resume.pdf" download>
-                <img src="/download.svg" alt="Download Resume" width="40" height="40">
+            <a href="resume.pdf" download>
+                <img src="download.svg" alt="Download Resume" width="40" height="40">
             </a>
         </div>
         <p>{{.Header.Summary}}</p>
     </div>
 
     {{- range .Experience}}
-        <div class="experience-item">
-            <div class="experience-header">
-                <h3>{{- .Company}}</h3>
-                <span>{{- .Location}}</span>
-            </div>
-			{{- range .Roles}}
-                <p class="company-location">{{.Title}}, {{.Start}} - {{.End}}</p>
-                {{- range .Entries}}
-                    <h4>{{- .Title}}</h4>
-                    <ul>
-                        {{- range .Content}}
-                            <li>{{.}}</li>
-                        {{- end}}
-                    </ul>
-                {{- end}}
-			{{- end}}
+    <div class="experience-item">
+        <div class="experience-header">
+            <h3>{{- .Company}}</h3>
+            <span>{{- .Location}}</span>
         </div>
+        {{- range .Roles}}
+            <p class="company-location">{{.Title}}, {{.Start}} - {{.End}}</p>
+            {{- range .Entries}}
+                <h4>{{- .Title}}</h4>
+                <ul>
+                    {{- range .Content}}
+                        <li>{{.}}</li>
+                    {{- end}}
+                </ul>
+            {{- end}}
+        {{- end}}
+    </div>
     {{- end}}
 
     <h2>Competencies</h2>
