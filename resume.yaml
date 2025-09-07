@@ -9,14 +9,17 @@ experience:
         start: 12/2024
         end: Present
         entries:
-          - title: 'Demand by Distance Buckets: ...'
+          - title: 'Demand by Distance Buckets: Bucketize demand outputs for better pricing adjustments.'
             include_in_latex: true
             content:
-              - 'Did stuff'
-          - title: 'Forecasting Latency SLOs: ...'
+              - 'Added multiple layers of bucketization in forecasts, enabling more granular pricing adjustments.'
+              - 'Implemented arbitrary nesting layers in forecast sinking client.'
+              - 'Worked with scientists and platform engineers to address scaling challenges due to exponentially increasing number of rows. E.g. compression, proxy size limits, and pruning near zero values.'
+          - title: 'Forecasting Latency SLOs: Add latency and availability SLOs on the forecasting platform.'
             include_in_latex: true
             content:
-              - 'more stuff'
+              - 'Aligned latency metrics across key segments in data pipeline.'
+              - 'Added alarms on latency and availability, increasing team accountability and visibility into regression.'
       - title: Software Engineer, Production Infrastructure
         start: 11/2021
         end: 12/2024
