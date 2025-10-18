@@ -72,32 +72,26 @@
                 <img src="download.svg" alt="Download Resume" width="40" height="40">
             </a>
         </div>
-        <p>Software developer with 5 years of experience in full-stack programming and cloud architectures, migrations, and operations. Improves and debugs large scale systems while minimizing user disruptions.</p>
+        <p>Software engineer with 5 years building production distributed systems and ML infrastructure at scale. Experienced in load balancing, service mesh operations, and data pipeline optimization. Track record of zero-downtime migrations and cost reduction while maintaining strict availability SLAs.</p>
     </div>
     <div class="experience-item">
         <div class="experience-header">
             <h3>Lyft Inc.</h3>
             <span>New York, NY</span>
         </div>
-            <p class="company-location">Software Engineer, Marketplace Forecasting, 12/2024 - Present</p>
-                <h4>Demand by Distance Buckets: Bucketize demand outputs for better pricing adjustments.</h4>
-                <ul>
-                        <li>Added multiple layers of bucketization in forecasts, enabling more granular pricing adjustments.</li>
-                        <li>Implemented arbitrary nesting layers in forecast sinking client.</li>
-                        <li>Worked with scientists and platform engineers to address scaling challenges due to exponentially increasing number of rows. E.g. compression, proxy size limits, and pruning near zero values.</li>
-                </ul>
-                <h4>Forecasting Latency SLOs: Add latency and availability SLOs on the forecasting platform.</h4>
-                <ul>
-                        <li>Aligned latency metrics across key segments in data pipeline.</li>
-                        <li>Added alarms on latency and availability, increasing team accountability and visibility into regression.</li>
-                </ul>
-            <p class="company-location">Software Engineer, Production Infrastructure, 11/2021 - 12/2024</p>
+            <p class="company-location">Software Engineer, Production Infrastructure \& Marketplace Forecasting, 11/2021 - Present</p>
                 <h4>Zone Aware Routing: Improved intra availability zone routing with ROI of $2 million.</h4>
                 <ul>
-                        <li>Reduced inter-AZ production traffic by 40%.</li>
-                        <li>Migrated 1416 microservices to envoy load balancing subsets.</li>
+                        <li>Reduced inter-AZ production traffic by 40%, saving $2M annually on data transfer costs.</li>
+                        <li>Migrated 1,416 microservices serving 500K+ requests/second to Envoy load balancing subsets.</li>
                         <li>Deprecated error prone load balancing components in favor of configuring load balancing subsets in Envoy.</li>
                         <li>Wrote design spec and grafana/kibana dashboards. Communicated with customer teams to debug load balancing edge cases.</li>
+                </ul>
+                <h4>Demand Forecasting Improvements: Scaled ML pipeline to support 30x increase in model granularity for marketplace pricing.</h4>
+                <ul>
+                        <li>Implemented compression and pruning across data pipeline, reducing over-the-network bandwidth by 80%.</li>
+                        <li>Collaborated with data scientists to validate model performance, ensuring accuracy (MAPE < 10%) throughout pipeline optimization.</li>
+                        <li>Implemented model inference handlers managing data processing, imputation, and post-inference aggregation.</li>
                 </ul>
                 <h4>No More Yaml (NoMoYa): Decreased time-to-deploy networking settings from 15 minutes to less than 30 seconds.</h4>
                 <ul>
@@ -110,10 +104,11 @@
                         <li>Implemented new data layer on control plane frontend and backend with 0 downtime, and a 99.95% mesh availability SLA.</li>
                         <li>Parallelized service discovery queue reducing endpoint query latency by roughly 50%.</li>
                 </ul>
-                <h4>Networking Day-to-Day</h4>
+                <h4>Operations \& Leadership</h4>
                 <ul>
+                        <li>Part of interview revamp working group. Developing new interview standards to address changes in the interview space related to LLMs.</li>
                         <li>Participated in debugging and mitigating more than 100 incidents through analyzing various kibana and prometheus queries, and SSHing into hosts themselves to validate networking components.</li>
-                        <li>Performed technical deep dives on load balancing, did 30+ candidate interviews, actively helped in team planning, and acted as mentor for both interns and new-hires.</li>
+                        <li>Performed technical deep dives on load balancing, did 30+ candidate interviews, actively participated in team planning, and acted as mentor for both interns and new-hires.</li>
                 </ul>
     </div>
     <div class="experience-item">
@@ -138,7 +133,7 @@
             <li>Languages: GoLang, TypeScript, Python, Bash, Java, C++, C, Rust.</li>
         </ul>
         <ul>
-            <li>Tools: Envoy, AWS, Kubernetes, Terraform, Docker, React, Prometheus/PromQL, Grafana, Kibana.</li>
+            <li>Tools: Envoy, AWS, Kubernetes, Terraform, Docker, React, Prometheus/PromQL, Grafana, Kibana, TensorFlow, Xarray, Pandas.</li>
         </ul>
 </body>
 </html>

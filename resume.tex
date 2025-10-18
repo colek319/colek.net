@@ -19,7 +19,7 @@
 
 %!f(string=me@colek.net)ont options
 \usepackage[sc]{mathpazo}
-\linespread{1.05}  %!p(string=Software developer with 5 years of experience in full-stack programming and cloud architectures, migrations, and operations. Improves and debugs large scale systems while minimizing user disruptions.)alladio needs more leading (space between lines)
+\linespread{1.05}  %!p(string=Software engineer with 5 years building production distributed systems and ML infrastructure at scale. Experienced in load balancing, service mesh operations, and data pipeline optimization. Track record of zero-downtime migrations and cost reduction while maintaining strict availability SLAs.)alladio needs more leading (space between lines)
 \usepackage[T1]{fontenc}
 
 \pagestyle{fancy}
@@ -111,31 +111,25 @@ linkedin://\href{https://www.linkedin.com/cole.koester}{cole.koester}
 
 \noindent\begin{minipage}{\textwidth}
 \footnotesize
-\textbf{Summary:} Software developer with 5 years of experience in full-stack programming and cloud architectures, migrations, and operations. Improves and debugs large scale systems while minimizing user disruptions.
+\textbf{Summary:} Software engineer with 5 years building production distributed systems and ML infrastructure at scale. Experienced in load balancing, service mesh operations, and data pipeline optimization. Track record of zero-downtime migrations and cost reduction while maintaining strict availability SLAs.
 \end{minipage}
 
 \section{Professional Experience}
 \cvheadingstart
   \cvcompany{Lyft Inc.}{New York, NY}
-    \cvrole{\textbf{Software Engineer, Marketplace Forecasting}}{12/2024 - Present}
-        \cvproject{Demand by Distance Buckets: Bucketize demand outputs for better pricing adjustments.}{}
-        \cvitemstart
-          \cvitem{Added multiple layers of bucketization in forecasts, enabling more granular pricing adjustments.}
-          \cvitem{Implemented arbitrary nesting layers in forecast sinking client.}
-          \cvitem{Worked with scientists and platform engineers to address scaling challenges due to exponentially increasing number of rows. E.g. compression, proxy size limits, and pruning near zero values.}
-        \cvitemend
-        \cvproject{Forecasting Latency SLOs: Add latency and availability SLOs on the forecasting platform.}{}
-        \cvitemstart
-          \cvitem{Aligned latency metrics across key segments in data pipeline.}
-          \cvitem{Added alarms on latency and availability, increasing team accountability and visibility into regression.}
-        \cvitemend
-    \cvrole{\textbf{Software Engineer, Production Infrastructure}}{11/2021 - 12/2024}
+    \cvrole{\textbf{Software Engineer, Production Infrastructure \& Marketplace Forecasting}}{11/2021 - Present}
         \cvproject{Zone Aware Routing: Improved intra availability zone routing with ROI of \$2 million.}{}
         \cvitemstart
-          \cvitem{Reduced inter-AZ production traffic by 40\%.}
-          \cvitem{Migrated 1416 microservices to envoy load balancing subsets.}
+          \cvitem{Reduced inter-AZ production traffic by 40\%, saving \$2M annually on data transfer costs.}
+          \cvitem{Migrated 1,416 microservices serving 500K+ requests/second to Envoy load balancing subsets.}
           \cvitem{Deprecated error prone load balancing components in favor of configuring load balancing subsets in Envoy.}
           \cvitem{Wrote design spec and grafana/kibana dashboards. Communicated with customer teams to debug load balancing edge cases.}
+        \cvitemend
+        \cvproject{Demand Forecasting Improvements: Scaled ML pipeline to support 30x increase in model granularity for marketplace pricing.}{}
+        \cvitemstart
+          \cvitem{Implemented compression and pruning across data pipeline, reducing over-the-network bandwidth by 80\%.}
+          \cvitem{Collaborated with data scientists to validate model performance, ensuring accuracy (MAPE < 10\%) throughout pipeline optimization.}
+          \cvitem{Implemented model inference handlers managing data processing, imputation, and post-inference aggregation.}
         \cvitemend
         \cvproject{No More Yaml (NoMoYa): Decreased time-to-deploy networking settings from 15 minutes to less than 30 seconds.}{}
         \cvitemstart
@@ -148,10 +142,11 @@ linkedin://\href{https://www.linkedin.com/cole.koester}{cole.koester}
           \cvitem{Implemented new data layer on control plane frontend and backend with 0 downtime, and a 99.95\% mesh availability SLA.}
           \cvitem{Parallelized service discovery queue reducing endpoint query latency by roughly 50\%.}
         \cvitemend
-        \cvproject{Networking Day-to-Day}{}
+        \cvproject{Operations \& Leadership}{}
         \cvitemstart
+          \cvitem{Part of interview revamp working group. Developing new interview standards to address changes in the interview space related to LLMs.}
           \cvitem{Participated in debugging and mitigating more than 100 incidents through analyzing various kibana and prometheus queries, and SSHing into hosts themselves to validate networking components.}
-          \cvitem{Performed technical deep dives on load balancing, did 30+ candidate interviews, actively helped in team planning, and acted as mentor for both interns and new-hires.}
+          \cvitem{Performed technical deep dives on load balancing, did 30+ candidate interviews, actively participated in team planning, and acted as mentor for both interns and new-hires.}
         \cvitemend
   \cvcompany{iManage LLC}{Chicago, IL}
     \cvrole{\textbf{Software Engineer, API}}{11/2019 - 08/2021}
@@ -178,7 +173,7 @@ linkedin://\href{https://www.linkedin.com/cole.koester}{cole.koester}
 \item
 \cvitemstart
     \cvitem{\textbf{Languages}: GoLang, TypeScript, Python, Bash, Java, C++, C, Rust}
-    \cvitem{\textbf{Tools}: Envoy, AWS, Kubernetes, Terraform, Docker, React, Prometheus/PromQL, Grafana, Kibana}
+    \cvitem{\textbf{Tools}: Envoy, AWS, Kubernetes, Terraform, Docker, React, Prometheus/PromQL, Grafana, Kibana, TensorFlow, Xarray, Pandas}
 \cvitemend
 \cvheadingend
 

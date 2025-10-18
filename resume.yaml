@@ -1,36 +1,27 @@
 header:
-  summary: Software developer with 5 years of experience in full-stack programming and cloud architectures, migrations, and operations. Improves and debugs large scale systems while minimizing user disruptions.
+  summary: Software engineer with 5 years building production distributed systems and ML infrastructure at scale. Experienced in load balancing, service mesh operations, and data pipeline optimization. Track record of zero-downtime migrations and cost reduction while maintaining strict availability SLAs.
   email: me@colek.net
 experience:
   - company: Lyft Inc.
     location: New York, NY
     roles:
-      - title: Software Engineer, Marketplace Forecasting
-        start: 12/2024
-        end: Present
-        entries:
-          - title: 'Demand by Distance Buckets: Bucketize demand outputs for better pricing adjustments.'
-            include_in_latex: true
-            content:
-              - 'Added multiple layers of bucketization in forecasts, enabling more granular pricing adjustments.'
-              - 'Implemented arbitrary nesting layers in forecast sinking client.'
-              - 'Worked with scientists and platform engineers to address scaling challenges due to exponentially increasing number of rows. E.g. compression, proxy size limits, and pruning near zero values.'
-          - title: 'Forecasting Latency SLOs: Add latency and availability SLOs on the forecasting platform.'
-            include_in_latex: true
-            content:
-              - 'Aligned latency metrics across key segments in data pipeline.'
-              - 'Added alarms on latency and availability, increasing team accountability and visibility into regression.'
-      - title: Software Engineer, Production Infrastructure
+      - title: Software Engineer, Production Infrastructure \& Marketplace Forecasting
         start: 11/2021
-        end: 12/2024
+        end: Present
         entries:
           - title: 'Zone Aware Routing: Improved intra availability zone routing with ROI of $2 million.'
             include_in_latex: true
             content:
-              - 'Reduced inter-AZ production traffic by 40%.'
-              - 'Migrated 1416 microservices to envoy load balancing subsets.'
+              - 'Reduced inter-AZ production traffic by 40%, saving $2M annually on data transfer costs.'
+              - 'Migrated 1,416 microservices serving 500K+ requests/second to Envoy load balancing subsets.'
               - 'Deprecated error prone load balancing components in favor of configuring load balancing subsets in Envoy.'
               - 'Wrote design spec and grafana/kibana dashboards. Communicated with customer teams to debug load balancing edge cases.'
+          - title: 'Demand Forecasting Improvements: Scaled ML pipeline to support 30x increase in model granularity for marketplace pricing.'
+            include_in_latex: true
+            content:
+              - 'Implemented compression and pruning across data pipeline, reducing over-the-network bandwidth by 80%.' 
+              - 'Collaborated with data scientists to validate model performance, ensuring accuracy (MAPE < 10%) throughout pipeline optimization.'
+              - 'Implemented model inference handlers managing data processing, imputation, and post-inference aggregation.'
           - title: 'No More Yaml (NoMoYa): Decreased time-to-deploy networking settings from 15 minutes to less than 30 seconds.'
             include_in_latex: true
             content:
@@ -42,11 +33,12 @@ experience:
               - 'Transitioned from leader-elected writers to independent writers, enhancing service reliability and simplifying the deployment pipeline.'
               - 'Implemented new data layer on control plane frontend and backend with 0 downtime, and a 99.95% mesh availability SLA.'
               - 'Parallelized service discovery queue reducing endpoint query latency by roughly 50%.'
-          - title: 'Networking Day-to-Day'
+          - title: 'Operations \& Leadership'
             include_in_latex: true
             content:
+              - 'Part of interview revamp working group. Developing new interview standards to address changes in the interview space related to LLMs.'
               - 'Participated in debugging and mitigating more than 100 incidents through analyzing various kibana and prometheus queries, and SSHing into hosts themselves to validate networking components.'
-              - 'Performed technical deep dives on load balancing, did 30+ candidate interviews, actively helped in team planning, and acted as mentor for both interns and new-hires.'
+              - 'Performed technical deep dives on load balancing, did 30+ candidate interviews, actively participated in team planning, and acted as mentor for both interns and new-hires.'
   - company: iManage LLC
     location: Chicago, IL
     roles:
@@ -70,4 +62,4 @@ competencies:
     content: ['GoLang, TypeScript, Python, Bash, Java, C++, C, Rust']
   - title: 'Tools'
     include_in_latex: true
-    content: ['Envoy, AWS, Kubernetes, Terraform, Docker, React, Prometheus/PromQL, Grafana, Kibana']
+    content: ['Envoy, AWS, Kubernetes, Terraform, Docker, React, Prometheus/PromQL, Grafana, Kibana, TensorFlow, Xarray, Pandas']
