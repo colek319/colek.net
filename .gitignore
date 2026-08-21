@@ -1,0 +1,7 @@
+*.aux
+*.log
+*.out
+texput.log
+.DS_Store
+.idea/
+out/
