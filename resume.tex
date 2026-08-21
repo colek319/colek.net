@@ -19,7 +19,7 @@
 
 %!f(string=me@colek.net)ont options
 \usepackage[sc]{mathpazo}
-\linespread{1.05}  %!p(string=Software engineer with 5 years of experience building and maintaining production distributed systems. Enjoys working working full stack, and on systems with scale.)alladio needs more leading (space between lines)
+\linespread{1.05}  %!p(string=Software engineer with 5 years of experience building and maintaining production distributed systems. Enjoys working full stack, and on systems at scale.)alladio needs more leading (space between lines)
 \usepackage[T1]{fontenc}
 
 \pagestyle{fancy}
@@ -111,25 +111,27 @@ linkedin://\href{https://www.linkedin.com/cole.koester}{cole.koester}
 
 \noindent\begin{minipage}{\textwidth}
 \footnotesize
-\textbf{Summary:} Software engineer with 5 years of experience building and maintaining production distributed systems. Enjoys working working full stack, and on systems with scale.
+\textbf{Summary:} Software engineer with 5 years of experience building and maintaining production distributed systems. Enjoys working full stack, and on systems at scale.
 \end{minipage}
 
 \section{Professional Experience}
 \cvheadingstart
   \cvcompany{Lyft Inc.}{New York, NY}
     \cvrole{\textbf{Software Engineer, Production Infrastructure \& Marketplace Forecasting}}{11/2021 - Present}
+        \cvproject{Forecasting Team: Scaled marketplace forecasting to 50x more data than the previous largest model.}{}
+        \cvitemstart
+          \cvitem{Shipped Demand by Dynamic Distance, scaling forecast keys from (geohash, source) to (geohash, airport type, distance bucket) for finer-grained marketplace pricing.}
+          \cvitem{Built Supply Cost forecasting, serving 7 features from a single model keyed on (geohash, airport type, distance bucket x product offering), roughly 50x more data than the previous largest model.}
+          \cvitem{Implemented compression at every API point in the platform, reducing data size by 10x.}
+          \cvitem{Spearheaded S3 pointer sinking pattern, running in parallel with existing sinks, letting customers consume features too large for the API layer even after compression.}
+          \cvitem{Drove roadmap planning, including async, eager training data loading projected to reduce memory by 20GB per pod.}
+        \cvitemend
         \cvproject{Zone Aware Routing: Improved intra availability zone routing with ROI of \$2 million.}{}
         \cvitemstart
           \cvitem{Reduced inter-AZ production traffic by 40\%, saving \$2M annually on data transfer costs.}
           \cvitem{Migrated 1,416 microservices serving 500K+ requests/second to Envoy load balancing subsets.}
           \cvitem{Deprecated error prone load balancing components in favor of configuring load balancing subsets in Envoy.}
           \cvitem{Wrote design spec and grafana/kibana dashboards. Communicated with customer teams to debug load balancing edge cases.}
-        \cvitemend
-        \cvproject{Demand Forecasting Improvements: Scaled ML pipeline to support 30x increase in model granularity for marketplace pricing.}{}
-        \cvitemstart
-          \cvitem{Implemented compression and pruning across data pipeline, reducing over-the-network bandwidth by 80\%.}
-          \cvitem{Collaborated with data scientists to validate model performance, ensuring accuracy (MAPE < 10\%) throughout pipeline optimization.}
-          \cvitem{Implemented model inference handlers managing data processing, imputation, and post-inference aggregation.}
         \cvitemend
         \cvproject{No More Yaml (NoMoYa): Decreased time-to-deploy networking settings from 15 minutes to less than 30 seconds.}{}
         \cvitemstart

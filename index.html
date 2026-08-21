@@ -72,7 +72,7 @@
                 <img src="download.svg" alt="Download Resume" width="40" height="40">
             </a>
         </div>
-        <p>Software engineer with 5 years of experience building and maintaining production distributed systems. Enjoys working working full stack, and on systems with scale.</p>
+        <p>Software engineer with 5 years of experience building and maintaining production distributed systems. Enjoys working full stack, and on systems at scale.</p>
     </div>
     <div class="experience-item">
         <div class="experience-header">
@@ -80,6 +80,14 @@
             <span>New York, NY</span>
         </div>
             <p class="company-location">Software Engineer, Production Infrastructure \& Marketplace Forecasting, 11/2021 - Present</p>
+                <h4>Forecasting Team: Scaled marketplace forecasting to 50x more data than the previous largest model.</h4>
+                <ul>
+                        <li>Shipped Demand by Dynamic Distance, scaling forecast keys from (geohash, source) to (geohash, airport type, distance bucket) for finer-grained marketplace pricing.</li>
+                        <li>Built Supply Cost forecasting, serving 7 features from a single model keyed on (geohash, airport type, distance bucket x product offering), roughly 50x more data than the previous largest model.</li>
+                        <li>Implemented compression at every API point in the platform, reducing data size by 10x.</li>
+                        <li>Spearheaded S3 pointer sinking pattern, running in parallel with existing sinks, letting customers consume features too large for the API layer even after compression.</li>
+                        <li>Drove roadmap planning, including async, eager training data loading projected to reduce memory by 20GB per pod.</li>
+                </ul>
                 <h4>Zone Aware Routing: Improved intra availability zone routing with ROI of $2 million.</h4>
                 <ul>
                         <li>Reduced inter-AZ production traffic by 40%, saving $2M annually on data transfer costs.</li>

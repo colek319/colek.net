@@ -1,5 +1,5 @@
 header:
-  summary: Software engineer with 5 years of experience building and maintaining production distributed systems. Enjoys working working full stack, and on systems with scale.
+  summary: Software engineer with 5 years of experience building and maintaining production distributed systems. Enjoys working full stack, and on systems at scale.
   email: me@colek.net
 experience:
   - company: Lyft Inc.
@@ -9,6 +9,14 @@ experience:
         start: 11/2021
         end: Present
         entries:
+          - title: 'Forecasting Team: Scaled marketplace forecasting to 50x more data than the previous largest model.'
+            include_in_latex: true
+            content:
+              - 'Shipped Demand by Dynamic Distance, scaling forecast keys from (geohash, source) to (geohash, airport type, distance bucket) for finer-grained marketplace pricing.'
+              - 'Built Supply Cost forecasting, serving 7 features from a single model keyed on (geohash, airport type, distance bucket x product offering), roughly 50x more data than the previous largest model.'
+              - 'Implemented compression at every API point in the platform, reducing data size by 10x.'
+              - 'Spearheaded S3 pointer sinking pattern, running in parallel with existing sinks, letting customers consume features too large for the API layer even after compression.'
+              - 'Drove roadmap planning, including async, eager training data loading projected to reduce memory by 20GB per pod.'
           - title: 'Zone Aware Routing: Improved intra availability zone routing with ROI of $2 million.'
             include_in_latex: true
             content:
@@ -17,7 +25,7 @@ experience:
               - 'Deprecated error prone load balancing components in favor of configuring load balancing subsets in Envoy.'
               - 'Wrote design spec and grafana/kibana dashboards. Communicated with customer teams to debug load balancing edge cases.'
           - title: 'Demand Forecasting Improvements: Scaled ML pipeline to support 30x increase in model granularity for marketplace pricing.'
-            include_in_latex: true
+            include_in_latex: false
             content:
               - 'Implemented compression and pruning across data pipeline, reducing over-the-network bandwidth by 80%.' 
               - 'Collaborated with data scientists to validate model performance, ensuring accuracy (MAPE < 10%) throughout pipeline optimization.'
