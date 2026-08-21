@@ -1,5 +1,5 @@
 header:
-  summary: Software engineer with 5 years of experience building and maintaining production distributed systems. Enjoys working full stack, and on systems at scale.
+  summary: Software engineer with 7 years of experience building and maintaining production distributed systems. Enjoys working across the stack and at scale.
   email: me@colek.net
 experience:
   - company: Lyft Inc.
@@ -9,10 +9,10 @@ experience:
         start: 11/2021
         end: Present
         entries:
-          - title: 'Forecasting Platform: Scaled marketplace forecasting to support models 50x larger than the previous maximum.'
+          - title: 'Forecasting Platform: Scaled marketplace forecasting to support a 50x increase in data throughput.'
             include_in_latex: true
             content:
-              - 'Delivered two flagship forecasting models powering marketplace pricing, expanding model granularity 50x and serving 7 features from a single model where each prior model served one.'
+              - 'Delivered two flagship forecasting models powering marketplace pricing at far finer granularity, serving 7 features from a single model where each prior model served one.'
               - 'Unblocked the scale-up by implementing compression across every API surface of the platform, reducing data transfer size by 10x.'
               - 'Spearheaded a new S3 pointer sinking pattern enabling customers to consume features too large for the API layer, designed to integrate cleanly alongside existing sink patterns.'
               - 'Drove team planning and roadmap definition, including an async training data loading initiative projected to reduce memory usage by 20GB per pod.'
@@ -22,7 +22,7 @@ experience:
               - 'Reduced inter-AZ production traffic by 40%, saving $2M annually on data transfer costs.'
               - 'Migrated 1,416 microservices serving 500K+ requests/second to Envoy load balancing subsets.'
               - 'Deprecated error prone load balancing components in favor of configuring load balancing subsets in Envoy.'
-              - 'Wrote design spec and grafana/kibana dashboards. Communicated with customer teams to debug load balancing edge cases.'
+              - 'Wrote design spec and Grafana/Kibana dashboards. Communicated with customer teams to debug load balancing edge cases.'
           - title: 'Demand Forecasting Improvements: Scaled ML pipeline to support 30x increase in model granularity for marketplace pricing.'
             include_in_latex: false
             content:
@@ -32,7 +32,7 @@ experience:
           - title: 'No More Yaml (NoMoYa): Decreased time-to-deploy networking settings from 15 minutes to less than 30 seconds.'
             include_in_latex: true
             content:
-              - 'Implemented new configuration API server (GoLang) and user interface (TypeScript + React) handling circuit breakers, health check endpoints, traffic migrations, and network dependency allow lists.'
+              - 'Implemented new configuration API server (Go) and user interface (TypeScript + React) handling circuit breakers, health check endpoints, traffic migrations, and network dependency allow lists.'
               - 'Improved team operations through self-service SEV mitigation, preventing context switching from team members.'
           - title: 'Control Plane Backend Sharding: Collaborated with tech lead to simplify endpoint discovery.'
             include_in_latex: true
@@ -43,7 +43,7 @@ experience:
           - title: 'Operations \& Leadership'
             include_in_latex: true
             content:
-              - 'Participated in debugging and mitigating more than 100 incidents through analyzing various kibana and prometheus queries, and SSHing into hosts themselves to validate networking components.'
+              - 'Participated in debugging and mitigating more than 100 incidents through analyzing various Kibana and Prometheus queries, and SSHing into hosts themselves to validate networking components.'
               - 'Performed technical deep dives on load balancing, did 30+ candidate interviews, actively participated in team planning, and acted as mentor for both interns and new-hires.'
               - 'Part of interview revamp working group. Developing new interview standards to address changes in the interview space related to LLMs.'
   - company: iManage LLC
@@ -56,17 +56,17 @@ experience:
           - title: 'IP Whitelisting and Subdomains: Implemented requirements with ROI of $1.8 M / Year.'
             include_in_latex: true
             content:
-              - 'Implemented new authorization service in GoLang scaling to roughly 10M requests / day. Authorization service handled: vanity subdomains, IP whitelisting, and proxying to core auth service.'
+              - 'Implemented new authorization service in Go scaling to roughly 10M requests / day. Authorization service handled: vanity subdomains, IP whitelisting, and proxying to core auth service.'
           - title: 'API Gateway: Deployed new API gateway edge proxy serving 30M requests / day with a 99.95% success rate SLA.'
             include_in_latex: true
             content:
-              - 'Defined and deployed envoy edge proxy configures separate listeners for internal/external clients, and multi-region traffic.'
-              - 'Deployed ratelimit service with a centralized configuration repo, reducing DDOS risk and putting backpressure on noisy internal services.'
+              - 'Defined and deployed an Envoy edge proxy configuring separate listeners for internal/external clients, and multi-region traffic.'
+              - 'Deployed rate-limit service with a centralized configuration repo, reducing DDoS risk and putting backpressure on noisy internal services.'
 
 competencies:
   - title: 'Languages'
     include_in_latex: true
-    content: ['GoLang, TypeScript, Python, Bash, Java, C++, C, Rust']
+    content: ['Go, TypeScript, Python, Bash, Java, C++, C, Rust']
   - title: 'Tools'
     include_in_latex: true
     content: ['Envoy, AWS, Kubernetes, Terraform, Docker, React, Prometheus/PromQL, Grafana, Kibana, TensorFlow, Xarray, Pandas']

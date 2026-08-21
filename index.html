@@ -72,7 +72,7 @@
                 <img src="download.svg" alt="Download Resume" width="40" height="40">
             </a>
         </div>
-        <p>Software engineer with 5 years of experience building and maintaining production distributed systems. Enjoys working full stack, and on systems at scale.</p>
+        <p>Software engineer with 7 years of experience building and maintaining production distributed systems. Enjoys working across the stack and at scale.</p>
     </div>
     <div class="experience-item">
         <div class="experience-header">
@@ -80,9 +80,9 @@
             <span>New York, NY</span>
         </div>
             <p class="company-location">Software Engineer, Production Infrastructure \& Marketplace Forecasting, 11/2021 - Present</p>
-                <h4>Forecasting Platform: Scaled marketplace forecasting to support models 50x larger than the previous maximum.</h4>
+                <h4>Forecasting Platform: Scaled marketplace forecasting to support a 50x increase in data throughput.</h4>
                 <ul>
-                        <li>Delivered two flagship forecasting models powering marketplace pricing, expanding model granularity 50x and serving 7 features from a single model where each prior model served one.</li>
+                        <li>Delivered two flagship forecasting models powering marketplace pricing at far finer granularity, serving 7 features from a single model where each prior model served one.</li>
                         <li>Unblocked the scale-up by implementing compression across every API surface of the platform, reducing data transfer size by 10x.</li>
                         <li>Spearheaded a new S3 pointer sinking pattern enabling customers to consume features too large for the API layer, designed to integrate cleanly alongside existing sink patterns.</li>
                         <li>Drove team planning and roadmap definition, including an async training data loading initiative projected to reduce memory usage by 20GB per pod.</li>
@@ -92,7 +92,7 @@
                         <li>Reduced inter-AZ production traffic by 40%, saving $2M annually on data transfer costs.</li>
                         <li>Migrated 1,416 microservices serving 500K+ requests/second to Envoy load balancing subsets.</li>
                         <li>Deprecated error prone load balancing components in favor of configuring load balancing subsets in Envoy.</li>
-                        <li>Wrote design spec and grafana/kibana dashboards. Communicated with customer teams to debug load balancing edge cases.</li>
+                        <li>Wrote design spec and Grafana/Kibana dashboards. Communicated with customer teams to debug load balancing edge cases.</li>
                 </ul>
                 <h4>Demand Forecasting Improvements: Scaled ML pipeline to support 30x increase in model granularity for marketplace pricing.</h4>
                 <ul>
@@ -102,7 +102,7 @@
                 </ul>
                 <h4>No More Yaml (NoMoYa): Decreased time-to-deploy networking settings from 15 minutes to less than 30 seconds.</h4>
                 <ul>
-                        <li>Implemented new configuration API server (GoLang) and user interface (TypeScript + React) handling circuit breakers, health check endpoints, traffic migrations, and network dependency allow lists.</li>
+                        <li>Implemented new configuration API server (Go) and user interface (TypeScript + React) handling circuit breakers, health check endpoints, traffic migrations, and network dependency allow lists.</li>
                         <li>Improved team operations through self-service SEV mitigation, preventing context switching from team members.</li>
                 </ul>
                 <h4>Control Plane Backend Sharding: Collaborated with tech lead to simplify endpoint discovery.</h4>
@@ -113,7 +113,7 @@
                 </ul>
                 <h4>Operations \& Leadership</h4>
                 <ul>
-                        <li>Participated in debugging and mitigating more than 100 incidents through analyzing various kibana and prometheus queries, and SSHing into hosts themselves to validate networking components.</li>
+                        <li>Participated in debugging and mitigating more than 100 incidents through analyzing various Kibana and Prometheus queries, and SSHing into hosts themselves to validate networking components.</li>
                         <li>Performed technical deep dives on load balancing, did 30+ candidate interviews, actively participated in team planning, and acted as mentor for both interns and new-hires.</li>
                         <li>Part of interview revamp working group. Developing new interview standards to address changes in the interview space related to LLMs.</li>
                 </ul>
@@ -126,18 +126,18 @@
             <p class="company-location">Software Engineer, API, 11/2019 - 08/2021</p>
                 <h4>IP Whitelisting and Subdomains: Implemented requirements with ROI of $1.8 M / Year.</h4>
                 <ul>
-                        <li>Implemented new authorization service in GoLang scaling to roughly 10M requests / day. Authorization service handled: vanity subdomains, IP whitelisting, and proxying to core auth service.</li>
+                        <li>Implemented new authorization service in Go scaling to roughly 10M requests / day. Authorization service handled: vanity subdomains, IP whitelisting, and proxying to core auth service.</li>
                 </ul>
                 <h4>API Gateway: Deployed new API gateway edge proxy serving 30M requests / day with a 99.95% success rate SLA.</h4>
                 <ul>
-                        <li>Defined and deployed envoy edge proxy configures separate listeners for internal/external clients, and multi-region traffic.</li>
-                        <li>Deployed ratelimit service with a centralized configuration repo, reducing DDOS risk and putting backpressure on noisy internal services.</li>
+                        <li>Defined and deployed an Envoy edge proxy configuring separate listeners for internal/external clients, and multi-region traffic.</li>
+                        <li>Deployed rate-limit service with a centralized configuration repo, reducing DDoS risk and putting backpressure on noisy internal services.</li>
                 </ul>
     </div>
 
     <h2>Competencies</h2>
         <ul>
-            <li>Languages: GoLang, TypeScript, Python, Bash, Java, C++, C, Rust.</li>
+            <li>Languages: Go, TypeScript, Python, Bash, Java, C++, C, Rust.</li>
         </ul>
         <ul>
             <li>Tools: Envoy, AWS, Kubernetes, Terraform, Docker, React, Prometheus/PromQL, Grafana, Kibana, TensorFlow, Xarray, Pandas.</li>
