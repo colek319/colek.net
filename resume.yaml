@@ -9,14 +9,13 @@ experience:
         start: 11/2021
         end: Present
         entries:
-          - title: 'Forecasting Team: Scaled marketplace forecasting to 50x more data than the previous largest model.'
+          - title: 'Forecasting Platform: Scaled marketplace forecasting to support models 50x larger than the previous maximum.'
             include_in_latex: true
             content:
-              - 'Shipped Demand by Dynamic Distance, scaling forecast keys from (geohash, source) to (geohash, airport type, distance bucket) for finer-grained marketplace pricing.'
-              - 'Built Supply Cost forecasting, serving 7 features from a single model keyed on (geohash, airport type, distance bucket x product offering), roughly 50x more data than the previous largest model.'
-              - 'Implemented compression at every API point in the platform, reducing data size by 10x.'
-              - 'Spearheaded S3 pointer sinking pattern, running in parallel with existing sinks, letting customers consume features too large for the API layer even after compression.'
-              - 'Drove roadmap planning, including async, eager training data loading projected to reduce memory by 20GB per pod.'
+              - 'Delivered two flagship forecasting models powering marketplace pricing, expanding model granularity 50x and serving 7 features from a single model where each prior model served one.'
+              - 'Unblocked the scale-up by implementing compression across every API surface of the platform, reducing data transfer size by 10x.'
+              - 'Spearheaded a new S3 pointer sinking pattern enabling customers to consume features too large for the API layer, designed to integrate cleanly alongside existing sink patterns.'
+              - 'Drove team planning and roadmap definition, including an async training data loading initiative projected to reduce memory usage by 20GB per pod.'
           - title: 'Zone Aware Routing: Improved intra availability zone routing with ROI of $2 million.'
             include_in_latex: true
             content:
