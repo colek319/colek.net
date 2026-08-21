@@ -84,6 +84,7 @@
                 <ul>
                         <li>Delivered two flagship forecasting models powering marketplace pricing at far finer granularity, serving 7 features from a single model where each prior model served one.</li>
                         <li>Unblocked the scale-up by implementing compression across every API surface of the platform, reducing data transfer size by 10x.</li>
+                        <li>Collaborated with data scientists to validate model performance throughout the scale-up, maintaining accuracy (MAPE < 10%).</li>
                         <li>Spearheaded a new S3 pointer sinking pattern enabling customers to consume features too large for the API layer, designed to integrate cleanly alongside existing sink patterns.</li>
                         <li>Drove team planning and roadmap definition, including an async training data loading initiative projected to reduce memory usage by 20GB per pod.</li>
                 </ul>
@@ -93,12 +94,6 @@
                         <li>Migrated 1,416 microservices serving 500K+ requests/second to Envoy load balancing subsets.</li>
                         <li>Deprecated error prone load balancing components in favor of configuring load balancing subsets in Envoy.</li>
                         <li>Wrote design spec and Grafana/Kibana dashboards. Communicated with customer teams to debug load balancing edge cases.</li>
-                </ul>
-                <h4>Demand Forecasting Improvements: Scaled ML pipeline to support 30x increase in model granularity for marketplace pricing.</h4>
-                <ul>
-                        <li>Implemented compression and pruning across data pipeline, reducing over-the-network bandwidth by 80%.</li>
-                        <li>Collaborated with data scientists to validate model performance, ensuring accuracy (MAPE < 10%) throughout pipeline optimization.</li>
-                        <li>Implemented model inference handlers managing data processing, imputation, and post-inference aggregation.</li>
                 </ul>
                 <h4>No More Yaml (NoMoYa): Decreased time-to-deploy networking settings from 15 minutes to less than 30 seconds.</h4>
                 <ul>
