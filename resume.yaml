@@ -12,9 +12,9 @@ experience:
           - title: 'Forecasting Platform: Scaled marketplace forecasting to support a 50x increase in data throughput.'
             include_in_latex: true
             content:
-              - 'Delivered two flagship forecasting models powering marketplace pricing at far finer granularity, serving 7 features from a single model where each prior model served one.'
-              - 'Unblocked the scale-up by implementing compression across every API surface of the platform, reducing data transfer size by 10x.'
-              - 'Collaborated with data scientists to validate model performance throughout the scale-up, maintaining accuracy (MAPE < 10%).'
+              - 'Delivered two flagship forecasting models powering marketplace pricing at finer granularity (50x), serving 7 features from a single model where each prior model served one.'
+              - 'Architected and implemented regional partitioning, splitting geohash regions into homogeneous subregions; improved relative MAPE by 15% and cut forecast message size and memory usage by 80%.'
+              - 'Unblocked the scale-up by implementing compression across every API surface of the platform, reducing data transfer size by 10x with marginal increase in CPU utilization.'
               - 'Spearheaded a new S3 pointer sinking pattern enabling customers to consume features too large for the API layer, designed to integrate cleanly alongside existing sink patterns.'
               - 'Drove team planning and roadmap definition, including an async training data loading initiative projected to reduce memory usage by 20GB per pod.'
           - title: 'Zone Aware Routing: Improved intra availability zone routing with ROI of $2 million.'

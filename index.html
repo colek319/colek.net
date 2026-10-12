@@ -82,9 +82,9 @@
             <p class="company-location">Software Engineer, Production Infrastructure \& Marketplace Forecasting, 11/2021 - Present</p>
                 <h4>Forecasting Platform: Scaled marketplace forecasting to support a 50x increase in data throughput.</h4>
                 <ul>
-                        <li>Delivered two flagship forecasting models powering marketplace pricing at far finer granularity, serving 7 features from a single model where each prior model served one.</li>
-                        <li>Unblocked the scale-up by implementing compression across every API surface of the platform, reducing data transfer size by 10x.</li>
-                        <li>Collaborated with data scientists to validate model performance throughout the scale-up, maintaining accuracy (MAPE < 10%).</li>
+                        <li>Delivered two flagship forecasting models powering marketplace pricing at finer granularity (50x), serving 7 features from a single model where each prior model served one.</li>
+                        <li>Architected and implemented regional partitioning, splitting geohash regions into homogeneous subregions; improved relative MAPE by 15% and cut forecast message size and memory usage by 80%.</li>
+                        <li>Unblocked the scale-up by implementing compression across every API surface of the platform, reducing data transfer size by 10x with marginal increase in CPU utilization.</li>
                         <li>Spearheaded a new S3 pointer sinking pattern enabling customers to consume features too large for the API layer, designed to integrate cleanly alongside existing sink patterns.</li>
                         <li>Drove team planning and roadmap definition, including an async training data loading initiative projected to reduce memory usage by 20GB per pod.</li>
                 </ul>

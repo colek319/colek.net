@@ -67,8 +67,8 @@
 \newcommand{\cvheading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \small#3 & \small #4 \\
+      \small\textbf{#1} & \small#2 \\
+      \footnotesize#3 & \footnotesize #4 \\
     \end{tabular*}\vspace{-9pt}
 }
 
@@ -120,9 +120,9 @@ $\ \diamond\ $
     \cvrole{\textbf{Software Engineer, Production Infrastructure \& Marketplace Forecasting}}{11/2021 - Present}
         \cvproject{Forecasting Platform: Scaled marketplace forecasting to support a 50x increase in data throughput.}{}
         \cvitemstart
-          \cvitem{Delivered two flagship forecasting models powering marketplace pricing at far finer granularity, serving 7 features from a single model where each prior model served one.}
-          \cvitem{Unblocked the scale-up by implementing compression across every API surface of the platform, reducing data transfer size by 10x.}
-          \cvitem{Collaborated with data scientists to validate model performance throughout the scale-up, maintaining accuracy (MAPE < 10\%).}
+          \cvitem{Delivered two flagship forecasting models powering marketplace pricing at finer granularity (50x), serving 7 features from a single model where each prior model served one.}
+          \cvitem{Architected and implemented regional partitioning, splitting geohash regions into homogeneous subregions; improved relative MAPE by 15\% and cut forecast message size and memory usage by 80\%.}
+          \cvitem{Unblocked the scale-up by implementing compression across every API surface of the platform, reducing data transfer size by 10x with marginal increase in CPU utilization.}
           \cvitem{Spearheaded a new S3 pointer sinking pattern enabling customers to consume features too large for the API layer, designed to integrate cleanly alongside existing sink patterns.}
           \cvitem{Drove team planning and roadmap definition, including an async training data loading initiative projected to reduce memory usage by 20GB per pod.}
         \cvitemend
@@ -165,6 +165,9 @@ $\ \diamond\ $
 
 \section{Education}
 \cvheadingstart
+  \cvheading
+    {New York University --- Courant Institute of Mathematical Sciences}{New York, NY}
+    {\textbf{Graduate Coursework in Scientific Computing} --- Numerical Methods I, Partial Differential Equations}{2026 - Present}
   \cvheading
     {Tufts University}{Somerville, MA}
     {\textbf{Bachelor of Science in Mathematics | QuestBridge Scholar} }{}
